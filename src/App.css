@@ -1,38 +1,50 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&family=Roboto+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+    --heading-font: 'EB Garamond', serif ;
+    --paragraph-font: 'Roboto Mono', monospace;
+    --light-accent: #5FDD9D;
+    --dark-accent: #8E7DBE;
+    --light-color: #F7F0F0;
+    --dark-color: #32373B;
+    font-size: 24px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+    margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.intro-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: var(--dark-accent);
+    width: 100vw;
+    height: 100vh;
+    padding-top: 200px;
+    gap: 50px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+img {
+    height: 250px;
+    width: auto;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+    font-family: var(--heading-font);
+    font-size: 2rem;
+    color: var(--light-accent);
+    text-align: left;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p {
+    font-family: var(--paragraph-font);
+    font-size: 1rem;
+    color: var(--light-color);
+    max-width: 50vw;
+    letter-spacing: -1px;
+}
+
+.accent-text {
+    color: var(--light-accent);
 }

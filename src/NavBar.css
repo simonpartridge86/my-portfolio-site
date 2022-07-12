@@ -1,0 +1,101 @@
+/* Source of nav button animation: https://codepen.io/martinboykov/pen/jOrEWBr */
+
+:root {
+    --speed-normal: 0.5s;
+    --speed-fast: 0.8s;
+}
+
+.nav-bar {
+    background-color: var(--dark-accent);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 100px;
+    width: 100vw;
+}
+
+.logo {
+    margin: 20px 0px;
+    text-indent: 50px;
+    line-height: 60px;
+    color: var(--light-accent);
+    font-family: var(--heading-font);
+    text-align: left;
+    font-size: 2rem;
+    width: 40vw;
+}
+
+.accent-text {
+    font-family: var(--paragraph-font);
+    font-weight: 500;
+}
+
+.nav-ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+    box-sizing: border-box;
+    font-family: var(--paragraph-font);
+    font-weight: 700;
+    font-size: 0.66rem;
+    width: 60vw;
+    margin-right: 20px;
+}
+
+.nav-link {
+    position: relative;
+    width: 120px;
+    height: 50px;
+    margin: 15px;
+    line-height: 50px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--light-color);
+    transition: var(--speed-normal);
+    border: 2px solid var(--light-accent);
+}
+.nav-link:hover {
+    background: var(--light-accent) url(https://i.postimg.cc/yYjrDgND/pixelbutton.png);
+    transition-delay: 0.5s;
+    background-size: 180px;
+    animation: animate var(--speed-fast) steps(8) forwards;
+    color: var(--dark-accent);
+}
+
+@keyframes animate {
+    0% {
+        background-position-y: 0;
+   }
+    100% {
+        background-position-y: -480px;
+   }
+}
+
+/* expanding logo idea taken from: https://www.demo2s.com/html-css/css-text-hover-to-expand-letter-to-word.html */
+
+h1>.logo-text1 {
+    display: inline-block;
+    text-indent: 0;
+}
+
+.logo-text2 {
+    display: inline-block;
+    max-width: 0;
+    overflow: hidden;
+    transition: max-width 1s;
+    vertical-align: top;
+}
+
+.logo-text2::after {
+    content: '\00a0';
+}
+
+h1:hover .logo-text2 {
+    max-width: 300px;
+}
