@@ -8,43 +8,35 @@
     --light-color: #F7F0F0;
     --dark-color: #32373B;
     font-size: 24px;
+    background: var(--light-color);
 }
 
 * {
     margin: 0;
 }
 
-.intro-section {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-color: var(--dark-accent);
-    width: 100vw;
+.skills-section {
     height: 100vh;
-    padding-top: 200px;
-    gap: 50px;
+    background-color: var(--light-accent);
+    display: flex;
+    flex-direction: column;
+}
+
+.skills-section>h1 {
+    color: var(--dark-accent);
+    margin: 0vh 5vh;
+}
+
+.skills-section>img {
+    height: auto;
+    width: auto;
+    margin: 5vh 10vh;
 }
 
 img {
-    height: 250px;
+    display: block;
+    width: 230px;
+    height: 95px;
     width: auto;
-}
-
-h1 {
-    font-family: var(--heading-font);
-    font-size: 2rem;
-    color: var(--light-accent);
-    text-align: left;
-}
-
-p {
-    font-family: var(--paragraph-font);
-    font-size: 1rem;
-    color: var(--light-color);
-    max-width: 50vw;
-    letter-spacing: -1px;
-}
-
-.accent-text {
-    color: var(--light-accent);
+    height: auto;
 }
