@@ -18,6 +18,7 @@ export default function PortfolioContent() {
 
 const StyledH1 = styled.h1`
   margin: 2vh 5vh;
+  font-family: var(--heading-font);
 `;
 
 const StyledDiv = styled.div`

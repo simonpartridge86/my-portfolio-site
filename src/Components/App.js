@@ -1,10 +1,10 @@
-import NavBar from "./Components/NavBar";
-import PageSection from "./Components/PageSection";
-import IntroContent from "./Components/IntroContent";
-import PortfolioContent from "./Components/PortfolioContent";
-import SkillsContent from "./Components/SkillsContent";
-import AboutContent from "./Components/AboutContent";
-import Footer from "./Components/Footer";
+import NavBar from "./NavBar";
+import PageSection from "./SectionContainer";
+import IntroContent from "./IntroContent";
+import PortfolioContent from "./PortfolioContent";
+import SkillsContent from "./SkillsContent";
+import AboutContent from "./AboutContent";
+import Footer from "./Footer";
 import { createGlobalStyle } from "styled-components";
 
 function App() {
@@ -32,8 +32,6 @@ function App() {
 export default App;
 
 const GlobalStyles = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&family=Roboto+Mono:wght@400;500;600;700&display=swap');
-
 :root {
     --heading-font: 'EB Garamond', serif ;
     --paragraph-font: 'Roboto Mono', monospace;
@@ -43,9 +41,16 @@ const GlobalStyles = createGlobalStyle`
     --dark-color: #32373B;
     font-size: 24px;
     background: var(--light-color);
+    
+}
+html,body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
 }
 
 * {
-    margin: 0;
+    margin: 0px;
 }
 `;
