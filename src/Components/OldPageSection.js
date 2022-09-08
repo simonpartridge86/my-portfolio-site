@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-export default function SectionContainer({ className, children }) {
+export default function PageSection({ className, children }) {
   return <StyledSection className={className}>{children}</StyledSection>;
 }
 

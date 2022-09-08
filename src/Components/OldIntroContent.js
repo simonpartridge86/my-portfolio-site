@@ -41,7 +41,6 @@ const StyledParagraph = styled.p`
   font-size: 1rem;
   color: var(--light-color);
   max-width: 50vw;
-  letter-spacing: -1px;
 `;
 
 const StyledSpan = styled.span`
