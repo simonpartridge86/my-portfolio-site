@@ -1,23 +1,15 @@
 import NavBar from "../Components/NavBar";
-import IntroContent from "../Components/IntroContent";
+import Footer from "../Components/Footer";
+import IntroContent from "../Components/IntroSection";
 import { createGlobalStyle } from "styled-components";
-import { ThemeProvider } from "styled-components";
-
-const theme = {
-  darkColor: "#201F24",
-  lightColor: "#FFFFFF",
-  darkAccent: "#8E7DBE",
-  lightAccent: "#5FDD9D",
-};
 
 function App() {
   return (
     <>
       <GlobalStyles />
-      <ThemeProvider theme={theme}>
-        <NavBar />
-        <IntroContent />
-      </ThemeProvider>
+      <NavBar />
+      <IntroContent />
+      <Footer />
     </>
   );
 }
