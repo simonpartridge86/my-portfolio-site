@@ -1,16 +1,23 @@
-import NavBar from "../Components/OldNavBar";
-import PageSection from "../Components/OldPageSection";
-import IntroContent from "../Components/OldIntroContent";
+import NavBar from "../Components/NavBar";
+import IntroContent from "../Components/IntroContent";
 import { createGlobalStyle } from "styled-components";
+import { ThemeProvider } from "styled-components";
+
+const theme = {
+  darkColor: "#201F24",
+  lightColor: "#FFFFFF",
+  darkAccent: "#8E7DBE",
+  lightAccent: "#5FDD9D",
+};
 
 function App() {
   return (
     <>
       <GlobalStyles />
-      <NavBar />
-      <PageSection className="intro-section">
+      <ThemeProvider theme={theme}>
+        <NavBar />
         <IntroContent />
-      </PageSection>
+      </ThemeProvider>
     </>
   );
 }
@@ -21,13 +28,13 @@ const GlobalStyles = createGlobalStyle`
 :root {
     --heading-font: 'DM Sans', sans-serif ;
     --paragraph-font: 'DM Sans', sans-serif;
-    --light-accent: #5FDD9D;
-    --dark-accent: #8E7DBE;
+    --dark-color: #201F24;
     --light-color: #FFFFFF;
-    --dark-color: #32373B;
+    --dark-accent: #8E7DBE;
+    --light-accent: #5FDD9D;
     font-size: 24px;
     background: var(--light-color);
-    
+
 }
 html,body {
     width: 100%;
