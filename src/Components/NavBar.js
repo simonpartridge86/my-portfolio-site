@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function NavBar() {
   const navigate = useNavigate();
-  const [isToggleActive, setIsToggleActive] = useState(true);
+  const [isToggleActive, setIsToggleActive] = useState(false);
   function showToggleMenu() {
     setIsToggleActive(!isToggleActive);
   }
