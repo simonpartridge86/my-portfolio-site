@@ -1,16 +1,18 @@
-import React from "react";
 import styled from "styled-components";
 
-export default function SkillsContent() {
+export default function Skills() {
   return (
-    <>
-      <StyledH1>My Skillset</StyledH1>
-    </>
+    <StyledMain>
+      <h1>Skills Page</h1>
+    </StyledMain>
   );
 }
 
-const StyledH1 = styled.h1`
-  color: var(--dark-accent);
-  margin: 0vh 5vh;
+const StyledMain = styled.main`
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
   font-family: var(--heading-font);
 `;

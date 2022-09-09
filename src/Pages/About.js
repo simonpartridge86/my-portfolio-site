@@ -1,9 +1,18 @@
-import React from "react";
+import styled from "styled-components";
 
-export default function AboutContent() {
+export default function About() {
   return (
-    <>
-      <h1>About Me</h1>
-    </>
+    <StyledMain>
+      <h1>About Page</h1>
+    </StyledMain>
   );
 }
+
+const StyledMain = styled.main`
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--heading-font);
+`;

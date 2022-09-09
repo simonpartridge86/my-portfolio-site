@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import ContentBox from "./ContentBox";
+import ContentBox from "../Components/ContentBox";
 
-export default function IntroContent() {
+export default function Home() {
   return (
     <StyledMain>
       <ContentBox

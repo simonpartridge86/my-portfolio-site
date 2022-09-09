@@ -1,23 +1,47 @@
 import styled, { keyframes } from "styled-components";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function NavBar() {
+  const navigate = useNavigate();
   const [isToggleActive, setIsToggleActive] = useState(true);
   function showToggleMenu() {
     setIsToggleActive(!isToggleActive);
   }
   return (
     <StyledNav className="nav-bar">
-      <StyledLogo>
+      <StyledLogo
+        onClick={() => {
+          navigate("/");
+        }}
+      >
         <StyledBox>{"<"}</StyledBox>
         <StyledTitle className="logo">Simon Partridge</StyledTitle>
       </StyledLogo>
       {isToggleActive === true ? (
         <StyledList>
-          <StyledLink href="skills.asp">Skills</StyledLink>
-          <StyledLink href="projects.asp">Projects</StyledLink>
-          <StyledLink href="about.asp">About</StyledLink>
-          <StyledLink href="contact.asp">Contact</StyledLink>
+          <StyledLink
+            onClick={() => {
+              navigate("/projects");
+            }}
+          >
+            Projects
+          </StyledLink>
+          <StyledLink
+            onClick={() => {
+              navigate("/skills");
+            }}
+          >
+            Skills
+          </StyledLink>
+
+          <StyledLink
+            onClick={() => {
+              navigate("/about");
+            }}
+          >
+            About
+          </StyledLink>
         </StyledList>
       ) : null}
       <StyledToggleMenu
@@ -88,6 +112,7 @@ const pixelAnimation = keyframes`
    }`;
 
 const StyledLink = styled.a`
+  cursor: pointer;
   font-family: var(--heading-font);
   font-weight: 700;
   font-size: 1.25rem;
@@ -97,12 +122,10 @@ const StyledLink = styled.a`
   line-height: 60px;
   letter-spacing: 1px;
   text-decoration: none;
-
   text-align: center;
   color: var(--dark-color);
   transition: var(--speed-normal);
   border: 5px solid var(--dark-color);
-
   &:hover {
     background: var(--light-accent)
       url(https://i.postimg.cc/yYjrDgND/pixelbutton.png);
@@ -113,6 +136,7 @@ const StyledLink = styled.a`
 `;
 
 const StyledLogo = styled.div`
+  cursor: pointer;
   border: 5px solid var(--dark-color);
   background: var(--light-color);
   height: 60px;
