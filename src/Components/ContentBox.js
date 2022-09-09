@@ -35,13 +35,17 @@ const StyledSection = styled.section`
     ${({ bgBack }) =>
       bgBack
         ? css`
-            background: repeating-linear-gradient(
+            background-image: linear-gradient(
               45deg,
-              ${bgBack},
-              ${bgBack} 4px,
-              var(--dark-color) 2.5px,
-              var(--dark-color) 6.5px
+              var(--dark-color) 14.29%,
+              ${bgBack} 14.29%,
+              ${bgBack} 50%,
+              var(--dark-color) 50%,
+              var(--dark-color) 64.29%,
+              ${bgBack} 64.29%,
+              ${bgBack} 100%
             );
+            background-size: 9.9px 9.9px;
           `
         : css`
             background: var(--light-color);
@@ -58,3 +62,7 @@ const StyledSection = styled.section`
     z-index: -1;
   }
 `;
+
+/*
+Note: striped background css generated using https://stripesgenerator.com/
+*/

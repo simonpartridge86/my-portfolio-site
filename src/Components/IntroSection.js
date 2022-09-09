@@ -56,6 +56,7 @@ const StyledImage = styled.img`
   height: 45vh;
   min-height: 100px;
   width: auto;
+  padding-bottom: 30px;
 `;
 
 const StyledSection = styled.section`
