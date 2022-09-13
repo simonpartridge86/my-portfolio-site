@@ -18,19 +18,9 @@ export default function Projects() {
         slidesPerView={1}
         navigation={true}
         pagination={{ clickable: true }}
-        // effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
-        // coverflowEffect={{
-        //   rotate: 50,
-        //   stretch: 0,
-        //   depth: 100,
-        //   modifier: 1,
-        //   slideShadows: false,
-        // }}
         rewind={true}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
       >
         {projects.map((project) => {
           return (
