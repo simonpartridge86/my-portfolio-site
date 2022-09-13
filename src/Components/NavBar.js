@@ -18,7 +18,7 @@ export default function NavBar() {
         <StyledBox>{"<"}</StyledBox>
         <StyledTitle className="logo">Simon Partridge</StyledTitle>
       </StyledLogo>
-      {isToggleActive === true ? (
+      {!isToggleActive && (
         <StyledList>
           <StyledLink
             onClick={() => {
@@ -28,31 +28,35 @@ export default function NavBar() {
             Projects
           </StyledLink>
           <StyledLink
-            onClick={() => {
-              navigate("/skills");
-            }}
+            onClick={() =>
+              window.open(
+                "https://drive.google.com/file/d/1-dBgItLb1glBOU7Rd3WLeJduFJlMKSFp/view?usp=sharing",
+                "_blank"
+              )
+            }
           >
-            Skills
+            CV
           </StyledLink>
-
           <StyledLink
-            onClick={() => {
-              navigate("/about");
-            }}
+            onClick={() =>
+              window.open("https://github.com/simonpartridge86", "_blank")
+            }
           >
-            About
+            GitHub
           </StyledLink>
         </StyledList>
-      ) : null}
-      <StyledToggleMenu
-        href="#"
-        className="toggle-menu"
-        onClick={showToggleMenu}
-      >
-        <span className="bar"></span>
-        <span className="bar"></span>
-        <span className="bar"></span>
-      </StyledToggleMenu>
+      )}
+      {isToggleActive && (
+        <StyledToggleMenu
+          href="#"
+          className="toggle-menu"
+          onClick={showToggleMenu}
+        >
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </StyledToggleMenu>
+      )}
     </StyledNav>
   );
 }
