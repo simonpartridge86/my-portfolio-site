@@ -7,8 +7,8 @@ export default function ProjectCard() {
     <ContentBox
       width="80vw"
       height="50vh"
-      bgFront="var(--dark-accent)"
-      bgBack="var(--light-accent)"
+      bgFront="var(--light-accent)"
+      bgBack="var(--dark-accent)"
     >
       <StyledDiv>
         <StyledImage
@@ -69,12 +69,12 @@ const StyledSection = styled.section`
 const StyledHeading = styled.h2`
   font-family: var(--heading-font);
   font-weight: 700;
-  color: var(--light-accent);
+  color: var(--dark-accent);
 `;
 
 const StyledText = styled.p`
   font-family: var(--paragraph-font);
-  color: var(--light-color);
+  color: var(--dark-color);
 `;
 
 const StyledLinks = styled.div`

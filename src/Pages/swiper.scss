@@ -1,0 +1,24 @@
+.swiper {
+    width: 80vw;
+    padding-top: 20px;
+    padding-bottom: 70px;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    height: 50vh;
+  }
+
+  .swiper-button-prev, .swiper-button-next {
+    color: var(--dark-accent);
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: var(--dark-accent);
+}
+.swiper-pagination-bullet-disabled {
+  background-color: var(--dark-accent);
+}
