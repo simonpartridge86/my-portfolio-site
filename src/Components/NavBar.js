@@ -61,12 +61,12 @@ const StyledNav = styled.nav`
   background-image: linear-gradient(
     135deg,
     var(--dark-color) 14.29%,
-    var(--light-color) 14.29%,
-    var(--light-color) 50%,
+    var(--light-accent) 14.29%,
+    var(--light-accent) 50%,
     var(--dark-color) 50%,
     var(--dark-color) 64.29%,
-    var(--light-color) 64.29%,
-    var(--light-color) 100%
+    var(--light-accent) 64.29%,
+    var(--light-accent) 100%
   );
   background-size: 9.9px 9.9px;
   box-sizing: border-box;
