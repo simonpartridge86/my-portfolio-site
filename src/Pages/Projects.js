@@ -7,6 +7,7 @@ import "swiper/scss/navigation";
 import "swiper/scss/pagination";
 import "swiper/scss/effect-coverflow";
 import "./swiper.scss";
+import projects from "../data/projectsData.js";
 
 export default function Projects() {
   return (
@@ -31,15 +32,13 @@ export default function Projects() {
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
       >
-        <SwiperSlide>
-          <ProjectCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <ProjectCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <ProjectCard />
-        </SwiperSlide>
+        {projects.map((project) => {
+          return (
+            <SwiperSlide>
+              <ProjectCard project={project} />
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </StyledMain>
   );
@@ -54,7 +53,7 @@ const StyledMain = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: var(--light-color);
+  background: var(--dark-accent);
   box-sizing: border-box;
   border-left: 6px solid var(--dark-color);
   border-right: 6px solid var(--dark-color);
