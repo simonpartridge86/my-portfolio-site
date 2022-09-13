@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export default function Projects() {
+export default function ErrorPage() {
   return (
     <StyledMain>
-      <h1>Projects Page</h1>
+      <h1>Error Page - Page Not Found</h1>
     </StyledMain>
   );
 }

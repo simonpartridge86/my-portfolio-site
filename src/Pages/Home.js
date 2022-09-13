@@ -1,7 +1,17 @@
 import styled from "styled-components";
-import ContentBox from "./ContentBox";
+import ContentBox from "../Components/ContentBox";
+import LinkButton from "../Components/LinkButton";
 
-export default function IntroContent() {
+console.log(
+  "Hi, thanks for inspecting my website. Hopefully the console is error-free 🤞"
+);
+console.log(
+  "Use the links below to find out more about my work or contact me:"
+);
+console.log("https://github.com/simonpartridge86");
+console.log("https://www.linkedin.com/in/simonpartridge86/");
+
+export default function Home() {
   return (
     <StyledMain>
       <ContentBox
@@ -30,6 +40,14 @@ export default function IntroContent() {
             I travelled the globe over the last 10 years, but now I’m starting a
             new adventure as a Software Developer.
           </StyledText>
+          <StyledLinks>
+            <LinkButton path="/projects" text="View My Projects" />
+            <LinkButton
+              external={true}
+              path="https://drive.google.com/file/d/1-dBgItLb1glBOU7Rd3WLeJduFJlMKSFp/view?usp=sharing"
+              text="View My CV"
+            />
+          </StyledLinks>
         </StyledSection>
       </ContentBox>
     </StyledMain>
@@ -66,8 +84,8 @@ const StyledSection = styled.section`
   align-items: flex-start;
   height: inherit;
   width: inherit;
-  gap: 50px;
-  padding: 50px;
+  gap: 20px;
+  padding: 0px 30px;
 `;
 
 const StyledHeading = styled.h2`
@@ -79,4 +97,12 @@ const StyledHeading = styled.h2`
 const StyledText = styled.p`
   font-family: var(--paragraph-font);
   color: var(--light-color);
+`;
+
+const StyledLinks = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
 `;
