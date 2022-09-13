@@ -31,8 +31,8 @@ const StyledContent = styled.section`
 `;
 
 const StyledBox = styled.div`
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   box-sizing: border-box;
   border: 6px solid var(--dark-color);
   background: var(--dark-accent);
@@ -48,4 +48,5 @@ const StyledImage = styled.img`
 
 const StyledText = styled.p`
   font-family: var(--heading-font);
+  font-size: 0.75rem;
 `;

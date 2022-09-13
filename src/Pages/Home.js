@@ -67,7 +67,7 @@ const StyledMain = styled.main`
   box-sizing: border-box;
   border-left: 6px solid var(--dark-color);
   border-right: 6px solid var(--dark-color);
-  padding: 15vh 0 20vh 0;
+  padding: 0vh 0 0vh 0;
 `;
 
 const StyledImage = styled.img`
