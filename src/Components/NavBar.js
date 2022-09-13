@@ -1,34 +1,62 @@
 import styled, { keyframes } from "styled-components";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function NavBar() {
-  const [isToggleActive, setIsToggleActive] = useState(true);
+  const navigate = useNavigate();
+  const [isToggleActive, setIsToggleActive] = useState(false);
   function showToggleMenu() {
     setIsToggleActive(!isToggleActive);
   }
   return (
     <StyledNav className="nav-bar">
-      <StyledLogo>
+      <StyledLogo
+        onClick={() => {
+          navigate("/");
+        }}
+      >
         <StyledBox>{"<"}</StyledBox>
         <StyledTitle className="logo">Simon Partridge</StyledTitle>
       </StyledLogo>
-      {isToggleActive === true ? (
+      {!isToggleActive && (
         <StyledList>
-          <StyledLink href="skills.asp">Skills</StyledLink>
-          <StyledLink href="projects.asp">Projects</StyledLink>
-          <StyledLink href="about.asp">About</StyledLink>
-          <StyledLink href="contact.asp">Contact</StyledLink>
+          <StyledLink
+            onClick={() => {
+              navigate("/projects");
+            }}
+          >
+            Projects
+          </StyledLink>
+          <StyledLink
+            onClick={() =>
+              window.open(
+                "https://drive.google.com/file/d/1-dBgItLb1glBOU7Rd3WLeJduFJlMKSFp/view?usp=sharing",
+                "_blank"
+              )
+            }
+          >
+            CV
+          </StyledLink>
+          <StyledLink
+            onClick={() =>
+              window.open("https://github.com/simonpartridge86", "_blank")
+            }
+          >
+            GitHub
+          </StyledLink>
         </StyledList>
-      ) : null}
-      <StyledToggleMenu
-        href="#"
-        className="toggle-menu"
-        onClick={showToggleMenu}
-      >
-        <span className="bar"></span>
-        <span className="bar"></span>
-        <span className="bar"></span>
-      </StyledToggleMenu>
+      )}
+      {isToggleActive && (
+        <StyledToggleMenu
+          href="#"
+          className="toggle-menu"
+          onClick={showToggleMenu}
+        >
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </StyledToggleMenu>
+      )}
     </StyledNav>
   );
 }
@@ -37,12 +65,12 @@ const StyledNav = styled.nav`
   background-image: linear-gradient(
     135deg,
     var(--dark-color) 14.29%,
-    var(--light-color) 14.29%,
-    var(--light-color) 50%,
+    var(--light-accent) 14.29%,
+    var(--light-accent) 50%,
     var(--dark-color) 50%,
     var(--dark-color) 64.29%,
-    var(--light-color) 64.29%,
-    var(--light-color) 100%
+    var(--light-accent) 64.29%,
+    var(--light-accent) 100%
   );
   background-size: 9.9px 9.9px;
   box-sizing: border-box;
@@ -88,6 +116,7 @@ const pixelAnimation = keyframes`
    }`;
 
 const StyledLink = styled.a`
+  cursor: pointer;
   font-family: var(--heading-font);
   font-weight: 700;
   font-size: 1.25rem;
@@ -97,12 +126,10 @@ const StyledLink = styled.a`
   line-height: 60px;
   letter-spacing: 1px;
   text-decoration: none;
-
   text-align: center;
   color: var(--dark-color);
   transition: var(--speed-normal);
   border: 5px solid var(--dark-color);
-
   &:hover {
     background: var(--light-accent)
       url(https://i.postimg.cc/yYjrDgND/pixelbutton.png);
@@ -113,6 +140,7 @@ const StyledLink = styled.a`
 `;
 
 const StyledLogo = styled.div`
+  cursor: pointer;
   border: 5px solid var(--dark-color);
   background: var(--light-color);
   height: 60px;

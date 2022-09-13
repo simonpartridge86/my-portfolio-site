@@ -31,8 +31,8 @@ const StyledFooter = styled.footer`
   align-items: center;
   gap: 50px;
   position: fixed;
-  top: 80vh;
-  height: 20vh;
+  bottom: 0;
+  height: 15vh;
   width: 100vw;
   box-sizing: border-box;
   border-bottom: 6px solid var(--dark-color);
