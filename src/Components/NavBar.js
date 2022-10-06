@@ -1,6 +1,7 @@
 import styled, { keyframes } from "styled-components";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Logo from "./Logo";
 
 export default function NavBar() {
   const navigate = useNavigate();
@@ -10,14 +11,14 @@ export default function NavBar() {
   }
   return (
     <StyledNav className="nav-bar">
-      <StyledLogo
+      <Logo
         onClick={() => {
           navigate("/");
         }}
       >
         <StyledBox>{"<"}</StyledBox>
         <StyledTitle className="logo">Simon Partridge</StyledTitle>
-      </StyledLogo>
+      </Logo>
       {!isToggleActive && (
         <StyledList>
           <StyledLink
@@ -139,17 +140,17 @@ const StyledLink = styled.a`
   }
 `;
 
-const StyledLogo = styled.div`
-  cursor: pointer;
-  border: 5px solid var(--dark-color);
-  background: var(--light-color);
-  height: 60px;
-  min-width: 35vw;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  text-align: left;
-`;
+// const StyledLogo = styled.div`
+//   cursor: pointer;
+//   border: 5px solid var(--dark-color);
+//   background: var(--light-color);
+//   height: 60px;
+//   min-width: 35vw;
+//   display: flex;
+//   justify-content: flex-start;
+//   align-items: center;
+//   text-align: left;
+// `;
 
 const StyledBox = styled.div`
   display: flex;

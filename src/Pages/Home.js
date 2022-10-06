@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ContentBox from "../Components/ContentBox";
 import LinkButton from "../Components/LinkButton";
+import Logo from "../Components/Logo";
 
 console.log(
   "Hi, thanks for inspecting my website. Hopefully the console is error-free 🤞"
@@ -44,7 +45,7 @@ export default function Home() {
             <LinkButton path="/projects" text="View My Projects" />
             <LinkButton
               external={true}
-              path="https://drive.google.com/file/d/1-dBgItLb1glBOU7Rd3WLeJduFJlMKSFp/view?usp=sharing"
+              path="https://www.canva.com/design/DAFMS1Bo4Sg/jq2t0NooFjJ1FlABFBMUJA/edit?utm_content=DAFMS1Bo4Sg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
               text="View My CV"
             />
           </StyledLinks>

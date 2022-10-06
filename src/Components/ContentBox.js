@@ -53,7 +53,6 @@ const StyledSection = styled.section`
     content: "";
     position: absolute;
     display: block;
-
     border: inherit;
     left: 10px;
     top: 10px;
