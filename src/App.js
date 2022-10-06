@@ -29,7 +29,7 @@ export default App;
 
 const GlobalStyles = createGlobalStyle`
 :root {
-    --heading-font: 'DM Sans', sans-serif ;
+    --heading-font: 'PixelFont';
     --paragraph-font: 'DM Sans', sans-serif;
     --dark-color: #201F24;
     --light-color: #FFFFFF;

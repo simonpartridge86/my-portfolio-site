@@ -1,19 +1,19 @@
 import styled from "styled-components";
 
-export default function Logo() {
+export default function Logo({ onClick }) {
   return (
-    <SCSection className="expanding-section">
+    <SCSection className="expanding-section" onClick={onClick}>
       <StyledLogo className="logo">
         <span className="logo-initials">
           S
           <StyledLogoExpanded className="expanding-logo-text">
-            imon&nbsp;
+            IMON&nbsp;
           </StyledLogoExpanded>
         </span>
         <span className="logo-initials">
           P
           <StyledLogoExpanded className="expanding-logo-text">
-            artridge
+            ARTRIDGE
           </StyledLogoExpanded>
         </span>
       </StyledLogo>
@@ -24,19 +24,17 @@ export default function Logo() {
 const SCSection = styled.section`
   display: flex;
   justify-content: center;
+  align-items: center;
   cursor: pointer;
   border: 5px solid var(--dark-color);
   background: var(--light-color);
   height: 60px;
   max-width: 150px;
   transition: max-width 1s;
-  vertical-align: center;
-  @media (min-width: 768px) {
-    &:hover {
-      max-width: 500px;
-      .expanding-logo-text {
-        max-width: 200px;
-      }
+  &:hover {
+    max-width: 600px;
+    .expanding-logo-text {
+      max-width: 300px;
     }
   }
 `;

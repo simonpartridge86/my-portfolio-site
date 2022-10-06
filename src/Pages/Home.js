@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import ContentBox from "../Components/ContentBox";
 import LinkButton from "../Components/LinkButton";
-import Logo from "../Components/Logo";
 
 console.log(
   "Hi, thanks for inspecting my website. Hopefully the console is error-free 🤞"

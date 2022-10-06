@@ -15,10 +15,7 @@ export default function NavBar() {
         onClick={() => {
           navigate("/");
         }}
-      >
-        <StyledBox>{"<"}</StyledBox>
-        <StyledTitle className="logo">Simon Partridge</StyledTitle>
-      </Logo>
+      />
       {!isToggleActive && (
         <StyledList>
           <StyledLink
@@ -138,38 +135,6 @@ const StyledLink = styled.a`
     background-size: 120px;
     animation: ${pixelAnimation} 0.8s steps(8) forwards;
   }
-`;
-
-// const StyledLogo = styled.div`
-//   cursor: pointer;
-//   border: 5px solid var(--dark-color);
-//   background: var(--light-color);
-//   height: 60px;
-//   min-width: 35vw;
-//   display: flex;
-//   justify-content: flex-start;
-//   align-items: center;
-//   text-align: left;
-// `;
-
-const StyledBox = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 60px;
-  height: 60px;
-  font-family: var(--heading-font);
-  font-size: 2.5rem;
-  font-weight: 500;
-  border-right: 5px solid var(--dark-color);
-`;
-
-const StyledTitle = styled.h1`
-  text-indent: 20px;
-  color: var(--dark-accent);
-  font-family: var(--heading-font);
-  font-size: 1.5rem;
-  min-width: 30vw;
 `;
 
 const StyledToggleMenu = styled.a`
