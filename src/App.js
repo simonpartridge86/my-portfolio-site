@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import styled from "styled-components";
 import NavBar from "./components/NavBar";
 import Contact from "./components/Contact";
 import Intro from "./components/Intro";
@@ -21,13 +20,11 @@ export default function App() {
     <>
       <GlobalStyles />
       <NavBar />
-      <Main>
-        <Intro />
-        <Projects />
-        <Skills />
-        <About />
-        <Contact />
-      </Main>
+      <Intro />
+      <Projects />
+      <Skills />
+      <About />
+      <Contact />
     </>
   );
 }
@@ -42,8 +39,8 @@ const GlobalStyles = createGlobalStyle`
     --light-accent: #5FDD9D;
     font-size: 12px;
     background: var(--light-color);
-
 }
+
 html,body {
     width: 100%;
     height: 100%;
@@ -54,9 +51,4 @@ html,body {
 * {
     margin: 0;
 }
-`;
-
-const Main = styled.main`
-  box-sizing: border-box;
-  border: 6px solid var(--dark-color);
 `;

@@ -26,8 +26,13 @@ export default function Intro() {
           <Heading>Hi, I'm Simon Partridge</Heading>
           <Text>I’m a Doctor of Chemistry and former copy editor.</Text>
           <Text>
-            I travelled the globe over the last 10 years, but now I’m starting a
-            new adventure as a Software Developer.
+            After travelling the world and working remotely for the last 10
+            years, I’ve started a new adventure in the programming world.
+          </Text>
+          <Text>
+            I've just completed a full-stack JavaScript development bootcamp run
+            by the brilliant School of Code, and now I'm seeking job
+            opportunities as a full-stack developer.
           </Text>
           <LinkContainer>
             <LinkButton path="/projects" text="View My Projects" />
@@ -54,6 +59,9 @@ const Main = styled.div`
   background: var(--light-color);
   z-index: 0;
   padding: 0vh 0 0vh 0;
+  box-sizing: border-box;
+  border-right: 6px solid var(--dark-color);
+  border-left: 6px solid var(--dark-color);
 `;
 
 const Image = styled.img`
