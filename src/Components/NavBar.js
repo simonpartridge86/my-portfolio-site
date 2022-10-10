@@ -1,31 +1,19 @@
 import styled, { keyframes } from "styled-components";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Logo from "./Logo";
 
 export default function NavBar() {
-  const navigate = useNavigate();
   const [isToggleActive, setIsToggleActive] = useState(false);
   function showToggleMenu() {
     setIsToggleActive(!isToggleActive);
   }
   return (
-    <StyledNav className="nav-bar">
-      <Logo
-        onClick={() => {
-          navigate("/");
-        }}
-      />
+    <Nav className="nav-bar">
+      <Logo onClick={() => {}} />
       {!isToggleActive && (
-        <StyledList>
-          <StyledLink
-            onClick={() => {
-              navigate("/projects");
-            }}
-          >
-            Projects
-          </StyledLink>
-          <StyledLink
+        <List>
+          <Link onClick={() => {}}>Projects</Link>
+          <Link
             onClick={() =>
               window.open(
                 "https://drive.google.com/file/d/1-dBgItLb1glBOU7Rd3WLeJduFJlMKSFp/view?usp=sharing",
@@ -34,32 +22,28 @@ export default function NavBar() {
             }
           >
             CV
-          </StyledLink>
-          <StyledLink
+          </Link>
+          <Link
             onClick={() =>
               window.open("https://github.com/simonpartridge86", "_blank")
             }
           >
             GitHub
-          </StyledLink>
-        </StyledList>
+          </Link>
+        </List>
       )}
       {isToggleActive && (
-        <StyledToggleMenu
-          href="#"
-          className="toggle-menu"
-          onClick={showToggleMenu}
-        >
+        <ToggleMenu href="#" className="toggle-menu" onClick={showToggleMenu}>
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
-        </StyledToggleMenu>
+        </ToggleMenu>
       )}
-    </StyledNav>
+    </Nav>
   );
 }
 
-const StyledNav = styled.nav`
+const Nav = styled.nav`
   background-image: linear-gradient(
     135deg,
     var(--dark-color) 14.29%,
@@ -87,7 +71,7 @@ const StyledNav = styled.nav`
   }
 `;
 
-const StyledList = styled.ul`
+const List = styled.ul`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -113,11 +97,11 @@ const pixelAnimation = keyframes`
         background-position-y: -480px;
    }`;
 
-const StyledLink = styled.a`
+const Link = styled.a`
   cursor: pointer;
   font-family: var(--heading-font);
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 2.5rem;
   background: var(--light-color);
   min-width: 150px;
   padding: 0px;
@@ -137,7 +121,7 @@ const StyledLink = styled.a`
   }
 `;
 
-const StyledToggleMenu = styled.a`
+const ToggleMenu = styled.a`
   position: absolute;
   min-height: 75px;
   height: 15vh;

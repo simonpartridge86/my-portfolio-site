@@ -1,26 +1,17 @@
 import styled from "styled-components";
-import ContentBox from "../Components/ContentBox";
-import LinkButton from "../Components/LinkButton";
+import ContentBox from "../components/ContentBox";
+import LinkButton from "../components/LinkButton";
 
-console.log(
-  "Hi, thanks for inspecting my website. Hopefully the console is error-free 🤞"
-);
-console.log(
-  "Use the links below to find out more about my work or contact me:"
-);
-console.log("https://github.com/simonpartridge86");
-console.log("https://www.linkedin.com/in/simonpartridge86/");
-
-export default function Home() {
+export default function Intro() {
   return (
-    <StyledMain>
+    <Main>
       <ContentBox
         width="30vw"
         height="50vh"
         bgFront="var(--dark-accent)"
         bgBack="var(--light-accent)"
       >
-        <StyledImage
+        <Image
           src="https://i.postimg.cc/d18jz1NR/avatar-1024.png"
           alt="pixel avatar"
         />
@@ -31,30 +22,28 @@ export default function Home() {
         bgFront="var(--dark-accent)"
         bgBack="var(--light-accent)"
       >
-        <StyledSection>
-          <StyledHeading>Hi, I'm Simon Partridge</StyledHeading>
-          <StyledText>
-            I’m a Doctor of Chemistry and former copy editor.
-          </StyledText>
-          <StyledText>
+        <Section>
+          <Heading>Hi, I'm Simon Partridge</Heading>
+          <Text>I’m a Doctor of Chemistry and former copy editor.</Text>
+          <Text>
             I travelled the globe over the last 10 years, but now I’m starting a
             new adventure as a Software Developer.
-          </StyledText>
-          <StyledLinks>
+          </Text>
+          <LinkContainer>
             <LinkButton path="/projects" text="View My Projects" />
             <LinkButton
               external={true}
               path="https://www.canva.com/design/DAFMS1Bo4Sg/jq2t0NooFjJ1FlABFBMUJA/edit?utm_content=DAFMS1Bo4Sg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
               text="View My CV"
             />
-          </StyledLinks>
-        </StyledSection>
+          </LinkContainer>
+        </Section>
       </ContentBox>
-    </StyledMain>
+    </Main>
   );
 }
 
-const StyledMain = styled.main`
+const Main = styled.div`
   position: relative;
   display: flex;
   height: 100vh;
@@ -64,20 +53,17 @@ const StyledMain = styled.main`
   gap: 50px;
   background: var(--light-color);
   z-index: 0;
-  box-sizing: border-box;
-  border-left: 6px solid var(--dark-color);
-  border-right: 6px solid var(--dark-color);
   padding: 0vh 0 0vh 0;
 `;
 
-const StyledImage = styled.img`
+const Image = styled.img`
   height: 45vh;
   min-height: 100px;
   width: auto;
   padding-bottom: 30px;
 `;
 
-const StyledSection = styled.section`
+const Section = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -88,18 +74,18 @@ const StyledSection = styled.section`
   padding: 0px 30px;
 `;
 
-const StyledHeading = styled.h2`
+const Heading = styled.h2`
   font-family: var(--heading-font);
   font-weight: 700;
   color: var(--light-accent);
 `;
 
-const StyledText = styled.p`
+const Text = styled.p`
   font-family: var(--paragraph-font);
   color: var(--light-color);
 `;
 
-const StyledLinks = styled.div`
+const LinkContainer = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;

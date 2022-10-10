@@ -1,31 +1,36 @@
 import { createGlobalStyle } from "styled-components";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import NavBar from "./Components/NavBar";
-import Footer from "./Components/Footer";
-import Home from "./Pages/Home";
-import About from "./Pages/About";
-import Projects from "./Pages/Projects";
-import Skills from "./Pages/Skills";
-import ErrorPage from "./Pages/ErrorPage";
+import styled from "styled-components";
+import NavBar from "./components/NavBar";
+import Contact from "./components/Contact";
+import Intro from "./components/Intro";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
+import About from "./components/About";
 
-function App() {
+console.log(
+  "Hi, thanks for inspecting my website. Hopefully the console is error-free 🤞"
+);
+console.log(
+  "Use the links below to find out more about my work or contact me:"
+);
+console.log("https://github.com/simonpartridge86");
+console.log("https://www.linkedin.com/in/simonpartridge86/");
+
+export default function App() {
   return (
-    <Router>
+    <>
       <GlobalStyles />
       <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/skills" element={<Skills />} />
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
-      <Footer />
-    </Router>
+      <Main>
+        <Intro />
+        <Projects />
+        <Skills />
+        <About />
+        <Contact />
+      </Main>
+    </>
   );
 }
-
-export default App;
 
 const GlobalStyles = createGlobalStyle`
 :root {
@@ -35,7 +40,7 @@ const GlobalStyles = createGlobalStyle`
     --light-color: #FFFFFF;
     --dark-accent: #8E7DBE;
     --light-accent: #5FDD9D;
-    font-size: 24px;
+    font-size: 12px;
     background: var(--light-color);
 
 }
@@ -49,4 +54,9 @@ html,body {
 * {
     margin: 0;
 }
+`;
+
+const Main = styled.main`
+  box-sizing: border-box;
+  border: 6px solid var(--dark-color);
 `;

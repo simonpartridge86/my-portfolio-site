@@ -2,26 +2,23 @@ import styled from "styled-components";
 
 export default function Logo({ onClick }) {
   return (
-    <SCSection className="expanding-section" onClick={onClick}>
-      <StyledLogo className="logo">
+    <Section className="expanding-section" onClick={onClick}>
+      <Text className="logo">
         <span className="logo-initials">
           S
-          <StyledLogoExpanded className="expanding-logo-text">
-            IMON&nbsp;
-          </StyledLogoExpanded>
+          <ExpandedText className="expanding-logo-text">
+            imon&nbsp;
+          </ExpandedText>
         </span>
         <span className="logo-initials">
-          P
-          <StyledLogoExpanded className="expanding-logo-text">
-            ARTRIDGE
-          </StyledLogoExpanded>
+          P<ExpandedText className="expanding-logo-text">artridge</ExpandedText>
         </span>
-      </StyledLogo>
-    </SCSection>
+      </Text>
+    </Section>
   );
 }
 
-const SCSection = styled.section`
+const Section = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,14 +36,14 @@ const SCSection = styled.section`
   }
 `;
 
-const StyledLogo = styled.h1`
+const Text = styled.h1`
   margin: 0px 10px;
   color: var(--dark-accent);
   font-family: var(--heading-font);
-  font-size: 2rem;
+  font-size: 4rem;
 `;
 
-const StyledLogoExpanded = styled.span`
+const ExpandedText = styled.span`
   display: inline-block;
   text-indent: 0;
   max-width: 0;
