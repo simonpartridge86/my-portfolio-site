@@ -1,10 +1,10 @@
 import { useRef } from "react";
 import ContentBox from "./ContentBox";
 import styled from "styled-components";
-import projects from "../data/projectsData.js";
 import LinkButton from "./LinkButton";
+import { IoCloseSharp } from "react-icons/io5";
 
-export default function ProjectModal({ showModal, onClose }) {
+export default function ProjectModal({ showModal, onClose, data }) {
   const modalRef = useRef();
 
   function closeModal(e) {
@@ -20,20 +20,18 @@ export default function ProjectModal({ showModal, onClose }) {
   return (
     <Background ref={modalRef} onClick={closeModal}>
       <ContentBox bgFront="var(--light-color)" bgBack="var(--light-accent)">
-        <CloseButton onClick={onClose}>╳</CloseButton>
+        <CloseButton onClick={onClose}>{<IoCloseSharp />}</CloseButton>
         <MainContainer>
           <ImageContainer>
-            <Image
-              src={projects[0].images[0].src}
-              alt={`project.images[0].alt`}
-            />
+            <Image src={data.images[0].src} alt={data.images[0].alt} />
           </ImageContainer>
           <TextContainer>
-            <Heading>Test</Heading>
-            <Text>Test</Text>
-            <Text>Test</Text>
+            <Heading>{data.title}</Heading>
+            <Text>{data.description}</Text>
+            <Text>{data.tech}</Text>
             <LinkContainer>
-              <LinkButton text="Github" />
+              <LinkButton text={data.buttons[0].text} />
+              {data.buttons[1] && <LinkButton text={data.buttons[1].text} />}
             </LinkContainer>
           </TextContainer>
         </MainContainer>
@@ -60,19 +58,15 @@ const CloseButton = styled.div`
   position: absolute;
   top: 10px;
   right: 10px;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   background: var(--dark-accent);
   box-sizing: border-box;
-  border: 6px solid var(--dark-color);
-  font-family: var(--heading-font);
-  font-size: 2.5rem;
+  border: 4px solid var(--dark-color);
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-content: center;
-  text-align: center;
-  vertical-align: middle;
+  align-items: center;
+  font-size: 3.5rem;
 `;
 
 const MainContainer = styled.div`

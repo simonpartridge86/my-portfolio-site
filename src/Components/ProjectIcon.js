@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export default function ProjectIcon({ project }) {
+export default function ProjectIcon({ project, onClick }) {
   return (
-    <Div onClick={() => {}}>
+    <Div onClick={onClick}>
       <Content>
         <Box>
           <Image src={project.images[0].src} alt={`project.images[0].alt`} />

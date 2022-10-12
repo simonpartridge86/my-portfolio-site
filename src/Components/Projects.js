@@ -6,8 +6,9 @@ import ProjectModal from "./ProjectModal.js";
 
 export default function Projects() {
   const [showModal, setShowModal] = useState(false);
+  const [projectData, setProjectData] = useState(null);
 
-  function openModal() {
+  function handleModal() {
     setShowModal((prev) => !prev);
   }
 
@@ -23,12 +24,24 @@ export default function Projects() {
     <StyledSection>
       <h1>Projects</h1>
       <StyledDiv>
-        {projects.map((project) => {
-          return <ProjectIcon project={project}></ProjectIcon>;
+        {projects.map((project, index) => {
+          return (
+            <ProjectIcon
+              project={project}
+              key={index}
+              onClick={() => {
+                setProjectData(project);
+                handleModal();
+              }}
+            ></ProjectIcon>
+          );
         })}
       </StyledDiv>
-      <ProjectModal showModal={showModal} onClose={openModal} />
-      <button onClick={openModal}>Show Modal</button>
+      <ProjectModal
+        showModal={showModal}
+        onClose={handleModal}
+        data={projectData}
+      />
     </StyledSection>
   );
 }
