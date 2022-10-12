@@ -5,6 +5,7 @@ import Intro from "./components/Intro";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import About from "./components/About";
+import ProjectModal from "./components/ProjectModal";
 
 console.log(
   "Hi, thanks for inspecting my website. Hopefully the console is error-free 🤞"
@@ -21,6 +22,7 @@ export default function App() {
       <GlobalStyles />
       <NavBar />
       <Intro />
+      <ProjectModal />
       <Projects />
       <Skills />
       <About />
