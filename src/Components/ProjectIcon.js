@@ -16,6 +16,7 @@ export default function ProjectIcon({ project, onClick }) {
 const Div = styled.div`
   text-decoration: none;
   color: var(--dark-color);
+  cursor: pointer;
 `;
 
 const Content = styled.section`
@@ -27,8 +28,8 @@ const Content = styled.section`
 `;
 
 const Box = styled.div`
-  height: 80px;
-  width: 80px;
+  height: 200px;
+  width: 200px;
   box-sizing: border-box;
   border: 6px solid var(--dark-color);
   background: var(--dark-accent);
@@ -45,5 +46,5 @@ const Image = styled.img`
 
 const Text = styled.p`
   font-family: var(--paragraph-font);
-  font-size: 1.5rem;
+  font-size: 2.5rem;
 `;

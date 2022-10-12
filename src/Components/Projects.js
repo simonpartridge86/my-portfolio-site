@@ -22,7 +22,7 @@ export default function Projects() {
 
   return (
     <StyledSection>
-      <h1>Projects</h1>
+      <Heading>My Projects</Heading>
       <StyledDiv>
         {projects.map((project, index) => {
           return (
@@ -53,7 +53,7 @@ const StyledSection = styled.section`
   align-items: center;
   height: 100vh;
   width: 100vw;
-  gap: 50px;
+  gap: 100px;
   font-family: var(--heading-font);
   background: var(--dark-accent);
 `;
@@ -64,4 +64,12 @@ const StyledDiv = styled.div`
   justify-content: center;
   align-items: center;
   gap: 50px;
+`;
+
+const Heading = styled.h2`
+  font-size: 5rem;
+  color: var(--dark-color);
+  width: 100%;
+  text-align: left;
+  text-indent: 100px;
 `;

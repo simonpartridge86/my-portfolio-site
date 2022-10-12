@@ -4,7 +4,7 @@ import SocialIcon from "./SocialIcon";
 export default function Contact() {
   return (
     <Section>
-      <h1>Contact Me</h1>
+      <Heading>Contact Me</Heading>
       <Content>
         <SocialIcon
           text="Email."
@@ -44,6 +44,11 @@ const Content = styled.div`
   justify-content: center;
   align-items: center;
   gap: 50px;
+`;
+
+const Heading = styled.h2`
+  font-size: 5rem;
+  color: var(--dark-color);
 `;
 
 /*
