@@ -1,8 +1,24 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import ProjectIcon from "./ProjectIcon.js";
 import projects from "../data/projectsData.js";
+import ProjectModal from "./ProjectModal.js";
 
 export default function Projects() {
+  const [showModal, setShowModal] = useState(false);
+
+  function openModal() {
+    setShowModal((prev) => !prev);
+  }
+
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [showModal]);
+
   return (
     <StyledSection>
       <h1>Projects</h1>
@@ -11,6 +27,8 @@ export default function Projects() {
           return <ProjectIcon project={project}></ProjectIcon>;
         })}
       </StyledDiv>
+      <ProjectModal showModal={showModal} onClose={openModal} />
+      <button onClick={openModal}>Show Modal</button>
     </StyledSection>
   );
 }

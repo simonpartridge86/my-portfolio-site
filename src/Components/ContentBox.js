@@ -6,9 +6,16 @@ export default function ContentBox({
   bgFront,
   bgBack,
   children,
+  onClick,
 }) {
   return (
-    <Section height={height} width={width} bgFront={bgFront} bgBack={bgBack}>
+    <Section
+      onClick={onClick}
+      height={height}
+      width={width}
+      bgFront={bgFront}
+      bgBack={bgBack}
+    >
       {children}
     </Section>
   );
