@@ -1,6 +1,7 @@
 import styled, { keyframes, css } from "styled-components";
 import { useState } from "react";
 import Logo from "./Logo";
+import externalLinks from "../data/externalLinks.js";
 
 export default function NavBar() {
   const [isToggleActive, setIsToggleActive] = useState(false);
@@ -14,21 +15,8 @@ export default function NavBar() {
       <Logo onClick={() => {}} />
       <List isToggleActive={isToggleActive}>
         <Link onClick={() => {}}>Projects</Link>
-        <Link
-          onClick={() =>
-            window.open(
-              "https://drive.google.com/file/d/1-dBgItLb1glBOU7Rd3WLeJduFJlMKSFp/view?usp=sharing",
-              "_blank"
-            )
-          }
-        >
-          CV
-        </Link>
-        <Link
-          onClick={() =>
-            window.open("https://github.com/simonpartridge86", "_blank")
-          }
-        >
+        <Link onClick={() => window.open(externalLinks.cv, "_blank")}>CV</Link>
+        <Link onClick={() => window.open(externalLinks.github, "_blank")}>
           GitHub
         </Link>
       </List>
@@ -40,21 +28,10 @@ export default function NavBar() {
       {isToggleActive && (
         <MobileList isToggleActive={isToggleActive}>
           <Link onClick={() => {}}>Projects</Link>
-          <Link
-            onClick={() =>
-              window.open(
-                "https://drive.google.com/file/d/1-dBgItLb1glBOU7Rd3WLeJduFJlMKSFp/view?usp=sharing",
-                "_blank"
-              )
-            }
-          >
+          <Link onClick={() => window.open(externalLinks.cv, "_blank")}>
             CV
           </Link>
-          <Link
-            onClick={() =>
-              window.open("https://github.com/simonpartridge86", "_blank")
-            }
-          >
+          <Link onClick={() => window.open(externalLinks.github, "_blank")}>
             GitHub
           </Link>
         </MobileList>

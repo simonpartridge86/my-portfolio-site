@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import ProjectIcon from "./ProjectIcon.js";
+import ProjectIcon from "../components/ProjectIcon";
 import projects from "../data/projectsData.js";
-import ProjectModal from "./ProjectModal.js";
+import ProjectModal from "../components/ProjectModal.js";
 
 export default function Projects() {
   const [showModal, setShowModal] = useState(false);

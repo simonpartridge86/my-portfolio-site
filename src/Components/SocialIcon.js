@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export default function SocialIcon({ text, imgURL }) {
+export default function SocialIcon({ text, imgURL, link }) {
   return (
-    <Link href="https://twitter.com/home" target="_blank" rel="noreferrer">
+    <Link href={link} target="_blank" rel="noreferrer">
       <Content>
         <Box>
           <Image src={imgURL} alt={`${text} icon`} />

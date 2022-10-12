@@ -1,8 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 import NavBar from "./components/NavBar";
-import Contact from "./components/Contact";
-import Intro from "./components/Intro";
-import Projects from "./components/Projects";
+import Contact from "./pages/Contact";
+import Intro from "./pages/Intro";
+import Projects from "./pages/Projects";
+import externalLinks from "./data/externalLinks.js";
 
 console.log(
   "Hi, thanks for inspecting my website. Hopefully the console is error-free 🤞"
@@ -10,8 +11,8 @@ console.log(
 console.log(
   "Use the links below to find out more about my work or contact me:"
 );
-console.log("https://github.com/simonpartridge86");
-console.log("https://www.linkedin.com/in/simonpartridge86/");
+console.log(externalLinks.github);
+console.log(externalLinks.linkedin);
 
 export default function App() {
   return (

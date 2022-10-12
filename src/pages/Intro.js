@@ -38,7 +38,7 @@ export default function Intro() {
             <LinkButton path="/projects" text="View My Projects" />
             <LinkButton
               external={true}
-              path="https://www.canva.com/design/DAFMS1Bo4Sg/jq2t0NooFjJ1FlABFBMUJA/edit?utm_content=DAFMS1Bo4Sg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+              path="https://www.canva.com/design/DAFO2NxMh58/x2-7Hc_ruQk32GOflp0sMg/view?utm_content=DAFO2NxMh58&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink"
               text="View My CV"
             />
           </LinkContainer>
