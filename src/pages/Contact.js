@@ -38,9 +38,11 @@ const Section = styled.section`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100vw;
   gap: 50px;
   font-family: var(--heading-font);
+  box-sizing: border-box;
+  border-right: 6px solid var(--dark-color);
+  border-left: 6px solid var(--dark-color);
 `;
 
 const Content = styled.div`

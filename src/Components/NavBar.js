@@ -24,6 +24,13 @@ export default function NavBar({ homeRef, projectsRef, contactRef }) {
       <List isToggleActive={isToggleActive}>
         <Link
           onClick={() => {
+            handleClick(homeRef);
+          }}
+        >
+          Home
+        </Link>
+        <Link
+          onClick={() => {
             handleClick(projectsRef);
           }}
         >
@@ -35,9 +42,6 @@ export default function NavBar({ homeRef, projectsRef, contactRef }) {
           }}
         >
           Contact
-        </Link>
-        <Link onClick={() => window.open(externalLinks.github, "_blank")}>
-          GitHub
         </Link>
       </List>
       <ToggleButton onClick={showToggleMenu} isToggleActive={isToggleActive}>

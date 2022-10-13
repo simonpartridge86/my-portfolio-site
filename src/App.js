@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar";
 import Contact from "./pages/Contact";
 import Intro from "./pages/Intro";
 import Projects from "./pages/Projects";
+import Footer from "./components/Footer";
 import externalLinks from "./data/externalLinks.js";
 import { useRef } from "react";
 
@@ -31,6 +32,7 @@ export default function App() {
       <Intro passRef={homeRef} />
       <Projects passRef={projectsRef} />
       <Contact passRef={contactRef} />
+      <Footer />
     </>
   );
 }

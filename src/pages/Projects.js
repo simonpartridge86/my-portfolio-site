@@ -21,8 +21,8 @@ export default function Projects({ passRef }) {
   }, [showModal]);
 
   return (
-    <Section ref={passRef}>
-      <Heading>My Projects</Heading>
+    <ProjectSection ref={passRef}>
+      <Heading>My Coding Projects</Heading>
       <ProjectsContainer>
         {projects.map((project, index) => {
           return (
@@ -42,20 +42,22 @@ export default function Projects({ passRef }) {
         onClose={handleModal}
         data={projectData}
       />
-    </Section>
+    </ProjectSection>
   );
 }
 
-const Section = styled.section`
+const ProjectSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100vw;
   gap: 100px;
   font-family: var(--heading-font);
-  background: var(--dark-accent);
+  box-sizing: border-box;
+  border-right: 6px solid var(--dark-color);
+  border-left: 6px solid var(--dark-color);
+  background: var(--light-accent);
 `;
 
 const ProjectsContainer = styled.div`
@@ -68,7 +70,7 @@ const ProjectsContainer = styled.div`
 
 const Heading = styled.h2`
   font-size: 5rem;
-  color: var(--light-color);
+  color: var(--dark-color);
   width: 100%;
   text-align: center;
 `;
