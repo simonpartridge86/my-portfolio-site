@@ -2,9 +2,9 @@ import styled from "styled-components";
 import SocialIcon from "../components/SocialIcon";
 import externalLinks from "../data/externalLinks.js";
 
-export default function Contact() {
+export default function Contact({ passRef }) {
   return (
-    <Section>
+    <Section ref={passRef}>
       <Heading>Contact Me</Heading>
       <Content>
         <SocialIcon

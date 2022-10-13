@@ -4,7 +4,7 @@ import ProjectIcon from "../components/ProjectIcon";
 import projects from "../data/projectsData.js";
 import ProjectModal from "../components/ProjectModal.js";
 
-export default function Projects() {
+export default function Projects({ passRef }) {
   const [showModal, setShowModal] = useState(false);
   const [projectData, setProjectData] = useState(null);
 
@@ -21,7 +21,7 @@ export default function Projects() {
   }, [showModal]);
 
   return (
-    <Section>
+    <Section ref={passRef}>
       <Heading>My Projects</Heading>
       <ProjectsContainer>
         {projects.map((project, index) => {

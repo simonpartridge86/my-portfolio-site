@@ -3,19 +3,39 @@ import { useState } from "react";
 import Logo from "./Logo";
 import externalLinks from "../data/externalLinks.js";
 
-export default function NavBar() {
+export default function NavBar({ homeRef, projectsRef, contactRef }) {
   const [isToggleActive, setIsToggleActive] = useState(false);
 
   function showToggleMenu() {
     setIsToggleActive(!isToggleActive);
   }
 
+  function handleClick(currentRef) {
+    currentRef.current?.scrollIntoView({ behavior: "smooth" });
+  }
+
   return (
     <Nav>
-      <Logo onClick={() => {}} />
+      <Logo
+        onClick={() => {
+          handleClick(homeRef);
+        }}
+      />
       <List isToggleActive={isToggleActive}>
-        <Link onClick={() => {}}>Projects</Link>
-        <Link onClick={() => window.open(externalLinks.cv, "_blank")}>CV</Link>
+        <Link
+          onClick={() => {
+            handleClick(projectsRef);
+          }}
+        >
+          Projects
+        </Link>
+        <Link
+          onClick={() => {
+            handleClick(contactRef);
+          }}
+        >
+          Contact
+        </Link>
         <Link onClick={() => window.open(externalLinks.github, "_blank")}>
           GitHub
         </Link>

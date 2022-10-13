@@ -2,9 +2,9 @@ import styled from "styled-components";
 import ContentBox from "../components/ContentBox";
 import LinkButton from "../components/LinkButton";
 
-export default function Intro() {
+export default function Intro({ passRef }) {
   return (
-    <Main>
+    <Main ref={passRef}>
       <ContentBox
         width="30vw"
         height="50vh"

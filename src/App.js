@@ -4,6 +4,7 @@ import Contact from "./pages/Contact";
 import Intro from "./pages/Intro";
 import Projects from "./pages/Projects";
 import externalLinks from "./data/externalLinks.js";
+import { useRef } from "react";
 
 console.log(
   "Hi, thanks for inspecting my website. Hopefully the console is error-free 🤞"
@@ -15,13 +16,21 @@ console.log(externalLinks.github);
 console.log(externalLinks.linkedin);
 
 export default function App() {
+  const homeRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
+
   return (
     <>
       <GlobalStyles />
-      <NavBar />
-      <Intro />
-      <Projects />
-      <Contact />
+      <NavBar
+        homeRef={homeRef}
+        projectsRef={projectsRef}
+        contactRef={contactRef}
+      />
+      <Intro passRef={homeRef} />
+      <Projects passRef={projectsRef} />
+      <Contact passRef={contactRef} />
     </>
   );
 }
