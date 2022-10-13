@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function ProjectIcon({ project, onClick }) {
+export default function ProjectIcon({ project, onClick, imageLeft }) {
   return (
     <Div onClick={onClick}>
       <Content>
@@ -42,6 +42,7 @@ const Image = styled.img`
   height: 100%;
   width: 100%;
   object-fit: cover;
+  object-position: top;
 `;
 
 const Text = styled.p`

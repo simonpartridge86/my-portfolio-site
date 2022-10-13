@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 
-export default function LinkButton({ path, text, textSize, external }) {
+export default function LinkButton({ path, text, external }) {
   return !external ? (
     <Link onClick={() => {}}>{text}</Link>
   ) : (
@@ -20,8 +20,8 @@ const Link = styled.a`
   cursor: pointer;
   font-family: var(--heading-font);
   font-weight: 700;
-  font-size: 1rem;
-  background: var(--light-color);
+  font-size: 2rem;
+  background: var(--dark-accent);
   min-width: 150px;
   min-height: 60px;
   padding: 0px 10px;

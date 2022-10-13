@@ -21,9 +21,9 @@ export default function Projects() {
   }, [showModal]);
 
   return (
-    <StyledSection>
+    <Section>
       <Heading>My Projects</Heading>
-      <StyledDiv>
+      <ProjectsContainer>
         {projects.map((project, index) => {
           return (
             <ProjectIcon
@@ -36,17 +36,17 @@ export default function Projects() {
             ></ProjectIcon>
           );
         })}
-      </StyledDiv>
+      </ProjectsContainer>
       <ProjectModal
         showModal={showModal}
         onClose={handleModal}
         data={projectData}
       />
-    </StyledSection>
+    </Section>
   );
 }
 
-const StyledSection = styled.section`
+const Section = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,7 +58,7 @@ const StyledSection = styled.section`
   background: var(--dark-accent);
 `;
 
-const StyledDiv = styled.div`
+const ProjectsContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -68,8 +68,7 @@ const StyledDiv = styled.div`
 
 const Heading = styled.h2`
   font-size: 5rem;
-  color: var(--dark-color);
+  color: var(--light-color);
   width: 100%;
-  text-align: left;
-  text-indent: 100px;
+  text-align: center;
 `;

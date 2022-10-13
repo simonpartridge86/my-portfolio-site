@@ -19,22 +19,25 @@ export default function ProjectModal({ showModal, onClose, data }) {
 
   return (
     <Background ref={modalRef} onClick={closeModal}>
-      <ContentBox bgFront="var(--light-color)" bgBack="var(--light-accent)">
+      <ContentBox
+        bgFront="var(--light-color)"
+        bgBack="var(--light-accent)"
+        height="80vh"
+        width="60vw"
+      >
         <CloseButton onClick={onClose}>{<IoCloseSharp />}</CloseButton>
-        <MainContainer>
-          <ImageContainer>
-            <Image src={data.images[0].src} alt={data.images[0].alt} />
-          </ImageContainer>
+        <Container>
+          <Heading>{data.title}</Heading>
+          <Image src={data.images[0].src} alt={data.images[0].alt} />
           <TextContainer>
-            <Heading>{data.title}</Heading>
-            <Text>{data.description}</Text>
-            <Text>{data.tech}</Text>
-            <LinkContainer>
-              <LinkButton text={data.buttons[0].text} />
-              {data.buttons[1] && <LinkButton text={data.buttons[1].text} />}
-            </LinkContainer>
+            <ProjectText>{data.description}</ProjectText>
+            <TechText>Tech used:&nbsp;{data.tech}</TechText>
           </TextContainer>
-        </MainContainer>
+          <LinkContainer>
+            <LinkButton text={data.buttons[0].text} />
+            {data.buttons[1] && <LinkButton text={data.buttons[1].text} />}
+          </LinkContainer>
+        </Container>
       </ContentBox>
     </Background>
   );
@@ -69,27 +72,27 @@ const CloseButton = styled.div`
   font-size: 3.5rem;
 `;
 
-const MainContainer = styled.div`
+const Container = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 100%;
-  width: 100%;
-`;
-
-const ImageContainer = styled.div`
-  display: flex;
-  height: 100%;
-  width: 40%;
+  height: 90%;
+  width: 90%;
 `;
 
 const Image = styled.img`
   height: 100%;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   object-fit: cover;
+  object-position: top center;
   box-sizing: border-box;
   border: 6px solid var(--dark-color);
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -98,24 +101,43 @@ const TextContainer = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   height: 100%;
-  width: 60%;
+  width: 100%;
   padding-left: 10%;
   gap: 10px;
 `;
 
 const Heading = styled.h3`
   font-family: var(--heading-font);
-  font-size: 2.5rem;
+  font-size: 4rem;
+  color: var(--dark-accent);
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
 `;
 
-const Text = styled.p`
+const ProjectText = styled.p`
   font-family: var(--paragraph-font);
-  font-size: 1.5rem;
+  font-size: 2rem;
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+`;
+
+const TechText = styled.p`
+  font-family: var(--paragraph-font);
+  font-size: 2rem;
+  font-weight: bold;
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const LinkContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  width: 100%;
+  justify-content: center;
   align-items: center;
+  padding-bottom: 20px;
+  gap: 25px;
 `;
