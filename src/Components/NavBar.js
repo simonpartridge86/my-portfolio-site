@@ -90,7 +90,8 @@ const MobileList = styled.div`
   font-family: var(--paragraph-font);
   gap: 20px;
   position: fixed;
-  top: 75px;
+  z-index: 9;
+  top: 80px;
   left: 0;
   width: 100vw;
   height: 50vh;
@@ -130,7 +131,7 @@ const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  min-height: 75px;
+  height: 80px;
   width: 100%;
   z-index: 10;
   @media (max-width: 767px) {
