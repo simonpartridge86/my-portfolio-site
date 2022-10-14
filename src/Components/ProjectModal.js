@@ -31,11 +31,21 @@ export default function ProjectModal({ showModal, onClose, data }) {
           <Image src={data.images[0].src} alt={data.images[0].alt} />
           <TextContainer>
             <ProjectText>{data.description}</ProjectText>
-            <TechText>Tech used:&nbsp;{data.tech}</TechText>
+            <TechText>{data.tech}</TechText>
           </TextContainer>
           <LinkContainer>
-            <LinkButton text={data.buttons[0].text} />
-            {data.buttons[1] && <LinkButton text={data.buttons[1].text} />}
+            <LinkButton
+              text={data.buttons[0].text}
+              external={true}
+              path={data.buttons[0].link}
+            />
+            {data.buttons[1] && (
+              <LinkButton
+                text={data.buttons[1].text}
+                external={true}
+                path={data.buttons[1].link}
+              />
+            )}
           </LinkContainer>
         </Container>
       </ContentBox>
