@@ -95,7 +95,17 @@ const MobileList = styled.div`
   left: 0;
   width: 100vw;
   height: 50vh;
-  background: var(--light-accent);
+  background-image: linear-gradient(
+    135deg,
+    var(--dark-color) 14.29%,
+    var(--dark-accent) 14.29%,
+    var(--dark-accent) 50%,
+    var(--dark-color) 50%,
+    var(--dark-color) 64.29%,
+    var(--dark-accent) 64.29%,
+    var(--dark-accent) 100%
+  );
+  background-size: 9.9px 9.9px;
   box-sizing: border-box;
   border: 6px solid var(--dark-color);
   border-top: none;

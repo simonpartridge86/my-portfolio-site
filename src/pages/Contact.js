@@ -37,7 +37,7 @@ const ContactSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
   gap: 50px;
   font-family: var(--heading-font);
   box-sizing: border-box;

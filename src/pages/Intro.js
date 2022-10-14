@@ -37,16 +37,18 @@ const IntroSection = styled.section`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   box-sizing: border-box;
   border-right: 6px solid var(--dark-color);
   border-left: 6px solid var(--dark-color);
   background: var(--dark-accent);
-  padding: 15vh 5vw 0 5vw;
+  padding: 5%;
   @media (max-width: 768px) {
     flex-direction: column;
     justify-content: flex-start;
     gap: 50px;
+    padding-top: 15vh;
   }
 `;
 
