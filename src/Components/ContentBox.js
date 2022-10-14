@@ -8,18 +8,13 @@ export default function ContentBox({
   children,
 }) {
   return (
-    <StyledSection
-      height={height}
-      width={width}
-      bgFront={bgFront}
-      bgBack={bgBack}
-    >
+    <Section height={height} width={width} bgFront={bgFront} bgBack={bgBack}>
       {children}
-    </StyledSection>
+    </Section>
   );
 }
 
-const StyledSection = styled.section`
+const Section = styled.section`
   box-sizing: border-box;
   border: 6px solid var(--dark-color);
   height: ${({ height }) => (height ? height : "50vh")};
@@ -53,7 +48,6 @@ const StyledSection = styled.section`
     content: "";
     position: absolute;
     display: block;
-
     border: inherit;
     left: 10px;
     top: 10px;

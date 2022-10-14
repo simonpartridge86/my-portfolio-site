@@ -1,18 +1,10 @@
 import styled, { keyframes } from "styled-components";
-import { useNavigate } from "react-router-dom";
 
 export default function LinkButton({ path, text, textSize, external }) {
-  const navigate = useNavigate();
   return !external ? (
-    <StyledLink
-      onClick={() => {
-        navigate(path);
-      }}
-    >
-      {text}
-    </StyledLink>
+    <Link onClick={() => {}}>{text}</Link>
   ) : (
-    <StyledLink onClick={() => window.open(path, "_blank")}>{text}</StyledLink>
+    <Link onClick={() => window.open(path, "_blank")}>{text}</Link>
   );
 }
 
@@ -24,7 +16,7 @@ const pixelAnimation = keyframes`
         background-position-y: -480px;
    }`;
 
-const StyledLink = styled.a`
+const Link = styled.a`
   cursor: pointer;
   font-family: var(--heading-font);
   font-weight: 700;

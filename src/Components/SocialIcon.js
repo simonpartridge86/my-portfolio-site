@@ -2,27 +2,23 @@ import styled from "styled-components";
 
 export default function SocialIcon({ text, imgURL }) {
   return (
-    <StyledLink
-      href="https://twitter.com/home"
-      target="_blank"
-      rel="noreferrer"
-    >
-      <StyledContent>
-        <StyledBox>
-          <StyledImage src={imgURL} alt={`${text} icon`} />
-        </StyledBox>
-        <StyledText>{text}</StyledText>
-      </StyledContent>
-    </StyledLink>
+    <Link href="https://twitter.com/home" target="_blank" rel="noreferrer">
+      <Content>
+        <Box>
+          <Image src={imgURL} alt={`${text} icon`} />
+        </Box>
+        <Text>{text}</Text>
+      </Content>
+    </Link>
   );
 }
 
-const StyledLink = styled.a`
+const Link = styled.a`
   text-decoration: none;
   color: var(--dark-color);
 `;
 
-const StyledContent = styled.section`
+const Content = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,7 +26,7 @@ const StyledContent = styled.section`
   text-decoration: none;
 `;
 
-const StyledBox = styled.div`
+const Box = styled.div`
   height: 80px;
   width: 80px;
   box-sizing: border-box;
@@ -41,12 +37,12 @@ const StyledBox = styled.div`
   align-items: center;
 `;
 
-const StyledImage = styled.img`
+const Image = styled.img`
   height: 80%;
   width: 80%;
 `;
 
-const StyledText = styled.p`
-  font-family: var(--heading-font);
-  font-size: 0.75rem;
+const Text = styled.p`
+  font-family: var(--paragraph-font);
+  font-size: 1.5rem;
 `;
