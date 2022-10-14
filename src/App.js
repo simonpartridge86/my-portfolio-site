@@ -1,9 +1,9 @@
 import { createGlobalStyle } from "styled-components";
-import Navigation from "./components/Navigation";
+import Navigation from "./alan/Navigation";
 import Contact from "./pages/Contact";
 import Intro from "./pages/Intro";
 import Projects from "./pages/Projects";
-import Footer from "./components/Footer";
+import Footer from "./alan/Footer";
 import externalLinks from "./data/externalLinks.js";
 import { useRef } from "react";
 
