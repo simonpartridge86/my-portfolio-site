@@ -3,8 +3,8 @@ const projects = [
     id: 1,
     title: "Chews",
     description:
-      "A mobile-first web app to helps users with decision-making and recipe-finding at mealtimes. Created in 4 weeks in a 6-person team as my final project of the School of Code bootcamp.",
-    tech: "Next.js  |  Tailwind CSS | Chakra UI | Node.js | Express | PostgreSQL | Auth0",
+      "A mobile-first web app to help with decision-making and recipe-finding at mealtimes. Created in 4 weeks in a 6-person team as my School of Code final project.",
+    tech: "Next.js | Tailwind CSS | Chakra UI | Node.js | Express | PostgreSQL | Auth0",
     buttons: [
       { link: "https://chews.vercel.app/", text: "View App" },
       {
@@ -43,7 +43,7 @@ const projects = [
     title: "Portfolio Site",
     description:
       "This website! Created as a portfolio site to showcase my projects to prospective employers.",
-    tech: "React, Styled Components, React Router",
+    tech: "React | Styled Components",
     buttons: [
       {
         link: "https://github.com/simonpartridge86/my-portfolio-site",
@@ -54,6 +54,29 @@ const projects = [
       {
         src: "https://i.postimg.cc/kMxd57qY/Screenshot-2022-09-13-at-23-20-35.png",
         alt: "simon partridge portfolio site",
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "Randomization",
+    description:
+      "An NPM package that reduces the syntax for random number generation, as well as providing other randomization functionality. Created in a team of 3 during a 5-hour hackathon.",
+    tech: "JavaScript | Jest",
+    buttons: [
+      {
+        link: "https://github.com/samsonhumber/simple-randomization",
+        text: "GitHub Repo",
+      },
+      {
+        link: "https://www.npmjs.com/package/simple-randomization",
+        text: "View Package",
+      },
+    ],
+    images: [
+      {
+        src: "https://i.postimg.cc/xT81VpF5/Screenshot-2022-10-14-at-17-10-57.png",
+        alt: "NPM simple randomization",
       },
     ],
   },

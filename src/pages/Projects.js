@@ -22,7 +22,10 @@ export default function Projects({ passRef }) {
 
   return (
     <ProjectSection ref={passRef}>
-      <Heading>My Projects</Heading>
+      <TextContainer>
+        <Heading>My Projects</Heading>
+        <SubHeading>{"(Click for details)"}</SubHeading>
+      </TextContainer>
       <ProjectsContainer>
         {projects.map((project, index) => {
           return (
@@ -51,13 +54,26 @@ const ProjectSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  gap: 100px;
+  min-height: 100vh;
+  height: auto;
+  gap: 80px;
+  padding: 30px 0;
   font-family: var(--heading-font);
   box-sizing: border-box;
   border-right: 6px solid var(--dark-color);
   border-left: 6px solid var(--dark-color);
   background: var(--light-accent);
+  @media (max-width: 768px) {
+    padding-top: 75px;
+    gap: 50px;
+  }
+`;
+
+const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const ProjectsContainer = styled.div`
@@ -76,5 +92,15 @@ const Heading = styled.h2`
   text-align: center;
   @media (max-width: 768px) {
     font-size: 3rem;
+  }
+`;
+
+const SubHeading = styled.p`
+  font-size: 2rem;
+  color: var(--dark-color);
+  width: 100%;
+  text-align: center;
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
   }
 `;

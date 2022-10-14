@@ -39,7 +39,7 @@ const StyledFooter = styled.footer`
   border: 6px solid var(--dark-color);
   border-top: none;
   @media all and (max-width: 768px) {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 `;
 

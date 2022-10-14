@@ -37,7 +37,8 @@ const IntroSection = styled.section`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   box-sizing: border-box;
   border-right: 6px solid var(--dark-color);
   border-left: 6px solid var(--dark-color);

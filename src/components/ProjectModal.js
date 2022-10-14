@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import ContentBox from "./ContentBox";
 import styled from "styled-components";
 import LinkButton from "./LinkButton";
 import { IoCloseSharp } from "react-icons/io5";
@@ -19,19 +18,14 @@ export default function ProjectModal({ showModal, onClose, data }) {
 
   return (
     <Background ref={modalRef} onClick={closeModal}>
-      <ContentBox
-        bgFront="var(--light-color)"
-        bgBack="var(--dark-accent)"
-        height="80vh"
-        width="80vw"
-      >
+      <ContentBox>
         <CloseButton onClick={onClose}>{<IoCloseSharp />}</CloseButton>
         <Container>
           <Heading>{data.title}</Heading>
           <Image src={data.images[0].src} alt={data.images[0].alt} />
           <TextContainer>
             <ProjectText>{data.description}</ProjectText>
-            <TechText>{data.tech}</TechText>
+            <TechText>Tech used: {data.tech}</TechText>
           </TextContainer>
           <LinkContainer>
             <LinkButton
@@ -89,6 +83,9 @@ const Container = styled.section`
   align-items: center;
   height: 90%;
   width: 90%;
+  @media all and (max-width: 768px) {
+    gap: 20px;
+  }
 `;
 
 const Heading = styled.h3`
@@ -150,3 +147,49 @@ const LinkContainer = styled.div`
     gap: 5px;
   }
 `;
+
+const ContentBox = styled.section`
+  box-sizing: border-box;
+  border: 6px solid var(--dark-color);
+  height: 90vh;
+  width: 60vw;
+  background-color: var(--light-color);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 768px) {
+    height: auto;
+    width: 85vw;
+    max-height: 93vh;
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+  &:after {
+    background-image: linear-gradient(
+      45deg,
+      var(--dark-color) 14.29%,
+      var(--dark-accent) 14.29%,
+      var(--dark-accent) 50%,
+      var(--dark-color) 50%,
+      var(--dark-color) 64.29%,
+      var(--dark-accent) 64.29%,
+      var(--dark-accent) 100%
+    );
+    background-size: 9.9px 9.9px;
+    content: "";
+    position: absolute;
+    display: block;
+    border: inherit;
+    left: 10px;
+    top: 10px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+`;
+
+/*
+Note: striped background css generated using https://stripesgenerator.com/
+*/
