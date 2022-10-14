@@ -1,18 +1,19 @@
 import styled from "styled-components";
 
-export default function ErrorPage() {
+export default function About() {
   return (
-    <StyledMain>
-      <h1>Error Page - Page Not Found</h1>
-    </StyledMain>
+    <Content>
+      <h1>About Page</h1>
+    </Content>
   );
 }
 
-const StyledMain = styled.main`
+const Content = styled.div`
   display: flex;
   height: 100vh;
   width: 100vw;
   justify-content: center;
   align-items: center;
   font-family: var(--heading-font);
+  background: var(--dark-accent);
 `;

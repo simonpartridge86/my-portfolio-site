@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import ContentBox from "../Components/ContentBox";
-import LinkButton from "../Components/LinkButton";
+import ContentBox from "./ContentBox";
+import LinkButton from "./LinkButton";
 
 export default function ProjectCard({ project }) {
   return (
@@ -10,18 +10,16 @@ export default function ProjectCard({ project }) {
       bgFront="var(--light-color)"
       bgBack="var(--light-accent)"
     >
-      <StyledDiv>
+      <ImageContainer>
         {project.images.map((image) => {
-          return (
-            <StyledImage key={project.id} src={image.src} alt={image.alt} />
-          );
+          return <Image key={project.id} src={image.src} alt={image.alt} />;
         })}
-      </StyledDiv>
-      <StyledSection>
-        <StyledHeading>{project.title}</StyledHeading>
-        <StyledText>{project.description}</StyledText>
-        <StyledText>{"Tech Stack: " + project.tech}</StyledText>
-        <StyledLinks>
+      </ImageContainer>
+      <Section>
+        <Heading>{project.title}</Heading>
+        <Text>{project.description}</Text>
+        <Text>{"Tech Stack: " + project.tech}</Text>
+        <LinkContainer>
           {project.buttons.map((button) => {
             return (
               <LinkButton
@@ -32,13 +30,13 @@ export default function ProjectCard({ project }) {
               />
             );
           })}
-        </StyledLinks>
-      </StyledSection>
+        </LinkContainer>
+      </Section>
     </ContentBox>
   );
 }
 
-const StyledDiv = styled.div`
+const ImageContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -49,14 +47,14 @@ const StyledDiv = styled.div`
   padding: 0px 30px;
 `;
 
-const StyledImage = styled.img`
+const Image = styled.img`
   max-height: 80%;
   max-width: 100%;
   box-sizing: border-box;
   border: 6px solid var(--dark-color);
 `;
 
-const StyledSection = styled.section`
+const Section = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -67,18 +65,18 @@ const StyledSection = styled.section`
   padding: 0px 30px;
 `;
 
-const StyledHeading = styled.h2`
+const Heading = styled.h2`
   font-family: var(--heading-font);
   font-weight: 700;
   color: var(--dark-accent);
 `;
 
-const StyledText = styled.p`
+const Text = styled.p`
   font-family: var(--paragraph-font);
   color: var(--dark-color);
 `;
 
-const StyledLinks = styled.div`
+const LinkContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
