@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SocialIcon from "../alan/SocialIcon";
+import SocialIcon from "../components/SocialIcon";
 import externalLinks from "../data/externalLinks.js";
 
 export default function Contact({ passRef }) {
