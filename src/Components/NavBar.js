@@ -1,7 +1,6 @@
 import styled, { keyframes, css } from "styled-components";
 import { useState } from "react";
 import Logo from "./Logo";
-import externalLinks from "../data/externalLinks.js";
 
 export default function NavBar({ homeRef, projectsRef, contactRef }) {
   const [isToggleActive, setIsToggleActive] = useState(false);
@@ -91,7 +90,7 @@ const MobileList = styled.div`
   font-family: var(--paragraph-font);
   gap: 20px;
   position: fixed;
-  top: 15vh;
+  top: 75px;
   left: 0;
   width: 100vw;
   height: 50vh;
@@ -132,7 +131,6 @@ const Nav = styled.nav`
   align-items: center;
   position: fixed;
   min-height: 75px;
-  height: 15vh;
   width: 100%;
   z-index: 10;
   @media (max-width: 767px) {
@@ -171,7 +169,7 @@ const Link = styled.a`
   background: var(--light-color);
   min-width: 150px;
   padding: 0px;
-  line-height: 60px;
+  line-height: 50px;
   letter-spacing: 1px;
   text-decoration: none;
   text-align: center;
@@ -193,8 +191,8 @@ const Link = styled.a`
 const ToggleButton = styled.a`
   position: absolute;
   cursor: pointer;
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   gap: 7px;
   right: 10px;
   display: flex;
