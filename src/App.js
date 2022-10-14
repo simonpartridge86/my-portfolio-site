@@ -1,11 +1,11 @@
 import { createGlobalStyle } from "styled-components";
-import styled from "styled-components";
 import NavBar from "./components/NavBar";
-import Contact from "./components/Contact";
-import Intro from "./components/Intro";
-import Projects from "./components/Projects";
-import Skills from "./components/Skills";
-import About from "./components/About";
+import Contact from "./pages/Contact";
+import Intro from "./pages/Intro";
+import Projects from "./pages/Projects";
+import Footer from "./components/Footer";
+import externalLinks from "./data/externalLinks.js";
+import { useRef } from "react";
 
 console.log(
   "Hi, thanks for inspecting my website. Hopefully the console is error-free 🤞"
@@ -13,21 +13,26 @@ console.log(
 console.log(
   "Use the links below to find out more about my work or contact me:"
 );
-console.log("https://github.com/simonpartridge86");
-console.log("https://www.linkedin.com/in/simonpartridge86/");
+console.log(externalLinks.github);
+console.log(externalLinks.linkedin);
 
 export default function App() {
+  const homeRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
+
   return (
     <>
       <GlobalStyles />
-      <NavBar />
-      <Main>
-        <Intro />
-        <Projects />
-        <Skills />
-        <About />
-        <Contact />
-      </Main>
+      <NavBar
+        homeRef={homeRef}
+        projectsRef={projectsRef}
+        contactRef={contactRef}
+      />
+      <Intro passRef={homeRef} />
+      <Projects passRef={projectsRef} />
+      <Contact passRef={contactRef} />
+      <Footer />
     </>
   );
 }
@@ -42,8 +47,8 @@ const GlobalStyles = createGlobalStyle`
     --light-accent: #5FDD9D;
     font-size: 12px;
     background: var(--light-color);
-
 }
+
 html,body {
     width: 100%;
     height: 100%;
@@ -54,9 +59,4 @@ html,body {
 * {
     margin: 0;
 }
-`;
-
-const Main = styled.main`
-  box-sizing: border-box;
-  border: 6px solid var(--dark-color);
 `;

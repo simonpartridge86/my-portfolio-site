@@ -1,21 +1,22 @@
 import styled from "styled-components";
 
-export default function SocialIcon({ text, imgURL, link }) {
+export default function ProjectIcon({ project, onClick, imageLeft }) {
   return (
-    <Link href={link} target="_blank" rel="noreferrer">
+    <Div onClick={onClick}>
       <Content>
         <Box>
-          <Image src={imgURL} alt={`${text} icon`} />
+          <Image src={project.images[0].src} alt={`project.images[0].alt`} />
         </Box>
-        <Text>{text}</Text>
+        <Text>{project.title}</Text>
       </Content>
-    </Link>
+    </Div>
   );
 }
 
-const Link = styled.a`
+const Div = styled.div`
   text-decoration: none;
   color: var(--dark-color);
+  cursor: pointer;
 `;
 
 const Content = styled.section`
@@ -27,8 +28,8 @@ const Content = styled.section`
 `;
 
 const Box = styled.div`
-  height: 80px;
-  width: 80px;
+  height: 200px;
+  width: 200px;
   box-sizing: border-box;
   border: 6px solid var(--dark-color);
   background: var(--dark-accent);
@@ -38,11 +39,13 @@ const Box = styled.div`
 `;
 
 const Image = styled.img`
-  height: 80%;
-  width: 80%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
 `;
 
 const Text = styled.p`
   font-family: var(--paragraph-font);
-  font-size: 1.5rem;
+  font-size: 2.5rem;
 `;

@@ -1,47 +1,91 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 import { useState } from "react";
 import Logo from "./Logo";
+import externalLinks from "../data/externalLinks.js";
 
-export default function NavBar() {
+export default function NavBar({ homeRef, projectsRef, contactRef }) {
   const [isToggleActive, setIsToggleActive] = useState(false);
+
   function showToggleMenu() {
     setIsToggleActive(!isToggleActive);
   }
+
+  function handleClick(currentRef) {
+    currentRef.current?.scrollIntoView({ behavior: "smooth" });
+  }
+
   return (
-    <Nav className="nav-bar">
-      <Logo onClick={() => {}} />
-      {!isToggleActive && (
-        <List>
+    <Nav>
+      <Logo
+        onClick={() => {
+          handleClick(homeRef);
+        }}
+      />
+      <List isToggleActive={isToggleActive}>
+        <Link
+          onClick={() => {
+            handleClick(homeRef);
+          }}
+        >
+          Home
+        </Link>
+        <Link
+          onClick={() => {
+            handleClick(projectsRef);
+          }}
+        >
+          Projects
+        </Link>
+        <Link
+          onClick={() => {
+            handleClick(contactRef);
+          }}
+        >
+          Contact
+        </Link>
+      </List>
+      <ToggleButton onClick={showToggleMenu} isToggleActive={isToggleActive}>
+        <Bar />
+        <Bar />
+        <Bar />
+      </ToggleButton>
+      {isToggleActive && (
+        <MobileList isToggleActive={isToggleActive}>
           <Link onClick={() => {}}>Projects</Link>
-          <Link
-            onClick={() =>
-              window.open(
-                "https://drive.google.com/file/d/1-dBgItLb1glBOU7Rd3WLeJduFJlMKSFp/view?usp=sharing",
-                "_blank"
-              )
-            }
-          >
+          <Link onClick={() => window.open(externalLinks.cv, "_blank")}>
             CV
           </Link>
-          <Link
-            onClick={() =>
-              window.open("https://github.com/simonpartridge86", "_blank")
-            }
-          >
+          <Link onClick={() => window.open(externalLinks.github, "_blank")}>
             GitHub
           </Link>
-        </List>
-      )}
-      {isToggleActive && (
-        <ToggleMenu href="#" className="toggle-menu" onClick={showToggleMenu}>
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
-        </ToggleMenu>
+        </MobileList>
       )}
     </Nav>
   );
 }
+
+const MobileList = styled.div`
+  display: none;
+  flex-direction: column;
+  text-align: center;
+  font-family: var(--paragraph-font);
+  font-weight: 700;
+  font-size: 0.66rem;
+  gap: 2vh;
+  position: absolute;
+  top: 15vh;
+  width: 100%;
+  @media (max-width: 767px) {
+    ${(props) =>
+      props.isToggleActive
+        ? css`
+            display: flex;
+          `
+        : css`
+            display: none;
+          `};
+  }
+`;
 
 const Nav = styled.nav`
   background-image: linear-gradient(
@@ -57,7 +101,7 @@ const Nav = styled.nav`
   background-size: 9.9px 9.9px;
   box-sizing: border-box;
   border: 6px solid var(--dark-color);
-  padding-left: 100px;
+  padding: 0px 80px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -65,10 +109,8 @@ const Nav = styled.nav`
   position: fixed;
   min-height: 75px;
   height: 15vh;
-  width: 100vw;
+  width: 100%;
   z-index: 10;
-  @media (max-width: 768px) {
-  }
 `;
 
 const List = styled.ul`
@@ -81,11 +123,8 @@ const List = styled.ul`
   font-weight: 700;
   font-size: 0.66rem;
   gap: 2vw;
-  padding-right: 100px;
-  @media (max-width: 768px) {
-    flex-direction: column;
-    width: 100%;
-    display: flex;
+  @media (max-width: 767px) {
+    display: none;
   }
 `;
 
@@ -121,27 +160,42 @@ const Link = styled.a`
   }
 `;
 
-const ToggleMenu = styled.a`
+const ToggleButton = styled.a`
   position: absolute;
-  min-height: 75px;
-  height: 15vh;
-  width: 30px;
+  cursor: pointer;
+  height: 60px;
+  width: 60px;
   gap: 7px;
   right: 50px;
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  span {
-    height: 3px;
-    width: 100%;
-    background-color: white;
-    border-radius: 10px;
+  align-items: center;
+  border: 5px solid var(--dark-color);
+  ${(props) =>
+    props.isToggleActive
+      ? css`
+          background: var(--dark-accent);
+        `
+      : css`
+          background: var(--light-color);
+        `};
+  @media (min-width: 768px) {
+    display: none;
   }
-  @media (max-width: 768px) {
-    display: flex;
-  }
+`;
+
+const Bar = styled.span`
+  position: relative;
+  height: 5px;
+  width: 80%;
+  background-color: var(--dark-color);
 `;
 
 /*
 Note: striped background css generated using https://stripesgenerator.com/
 */
+
+/* Source of nav button animation: https://codepen.io/martinboykov/pen/jOrEWBr */
+/* Expanding logo idea taken from: https://www.demo2s.com/html-css/css-text-hover-to-expand-letter-to-word.html */
+/* Navbar toggle menu made following this tutorial: https://www.youtube.com/watch?v=At4B7A4GOPg&ab_channel=WebDevSimplified */
