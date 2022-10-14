@@ -80,9 +80,7 @@ const StyledList = styled.ul`
   min-width: 60vw;
   gap: 2vw;
   @media (max-width: 768px) {
-    flex-direction: column;
-    width: 100%;
-    display: flex;
+    display: none;
   }
 `;
 
