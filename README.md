@@ -4,4 +4,4 @@ This web app was created to showcase my coding projects for prospective employer
 
 The main technologies used were React and Styled Components.
 
-This site is deployed at [simonpartridge.me](https://www.simonpartridge.me/)
+This site can be viewed in deployment at [simonpartridge.me](https://www.simonpartridge.me/)
