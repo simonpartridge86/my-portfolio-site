@@ -19,18 +19,17 @@ const pixelAnimation = keyframes`
 const Link = styled.a`
   cursor: pointer;
   font-family: var(--heading-font);
-  font-weight: 700;
-  font-size: 2rem;
+  font-size: 1.5rem;
   background: var(--dark-accent);
-  min-width: 150px;
-  min-height: 60px;
+  width: 200px;
   padding: 0px 10px;
-  line-height: 60px;
+  line-height: 50px;
   letter-spacing: 1px;
   text-decoration: none;
   text-align: center;
   color: var(--dark-color);
   transition: var(--speed-normal);
+  box-sizing: border-box;
   border: 5px solid var(--dark-color);
   &:hover {
     background: var(--light-accent)
@@ -38,6 +37,10 @@ const Link = styled.a`
     transition-delay: 0.5s;
     background-size: 120px;
     animation: ${pixelAnimation} 0.8s steps(8) forwards;
+  }
+  @media (max-width: 768px) {
+    min-width: 100%;
+    font-size: 1.25rem;
   }
 `;
 

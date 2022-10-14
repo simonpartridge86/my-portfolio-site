@@ -21,9 +21,9 @@ export default function ProjectModal({ showModal, onClose, data }) {
     <Background ref={modalRef} onClick={closeModal}>
       <ContentBox
         bgFront="var(--light-color)"
-        bgBack="var(--light-accent)"
+        bgBack="var(--dark-accent)"
         height="80vh"
-        width="60vw"
+        width="80vw"
       >
         <CloseButton onClick={onClose}>{<IoCloseSharp />}</CloseButton>
         <Container>
@@ -65,26 +65,36 @@ const CloseButton = styled.div`
   width: 40px;
   background: var(--dark-accent);
   box-sizing: border-box;
-  border: 4px solid var(--dark-color);
+  border: 5px solid var(--dark-color);
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 3.5rem;
 `;
 
-const Container = styled.div`
+const Heading = styled.h3`
+  font-family: var(--heading-font);
+  font-size: 4rem;
+  color: var(--dark-accent);
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+    margin-top: 25px;
+  }
+`;
+
+const Container = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   height: 90%;
   width: 90%;
 `;
 
 const Image = styled.img`
-  height: 100%;
+  height: auto;
   width: auto;
-  max-width: 100%;
+  max-height: 50%;
   object-fit: cover;
   object-position: top center;
   box-sizing: border-box;
@@ -100,44 +110,32 @@ const TextContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  height: 100%;
-  width: 100%;
-  padding-left: 10%;
   gap: 10px;
-`;
-
-const Heading = styled.h3`
-  font-family: var(--heading-font);
-  font-size: 4rem;
-  color: var(--dark-accent);
-  @media (max-width: 768px) {
-    font-size: 2.5rem;
-  }
 `;
 
 const ProjectText = styled.p`
   font-family: var(--paragraph-font);
-  font-size: 2rem;
+  font-size: 1.5rem;
   @media (max-width: 768px) {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 `;
 
 const TechText = styled.p`
   font-family: var(--paragraph-font);
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   @media (max-width: 768px) {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 `;
 
 const LinkContainer = styled.div`
   display: flex;
   flex-direction: row;
-  width: 100%;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  padding-bottom: 20px;
-  gap: 25px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
