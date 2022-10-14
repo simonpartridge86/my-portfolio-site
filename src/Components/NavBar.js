@@ -1,7 +1,6 @@
 import styled, { keyframes, css } from "styled-components";
 import { useState } from "react";
 import Logo from "./Logo";
-import externalLinks from "../data/externalLinks.js";
 
 export default function NavBar({ homeRef, projectsRef, contactRef }) {
   const [isToggleActive, setIsToggleActive] = useState(false);
@@ -51,12 +50,29 @@ export default function NavBar({ homeRef, projectsRef, contactRef }) {
       </ToggleButton>
       {isToggleActive && (
         <MobileList isToggleActive={isToggleActive}>
-          <Link onClick={() => {}}>Projects</Link>
-          <Link onClick={() => window.open(externalLinks.cv, "_blank")}>
-            CV
+          <Link
+            onClick={() => {
+              handleClick(homeRef);
+              showToggleMenu();
+            }}
+          >
+            Home
           </Link>
-          <Link onClick={() => window.open(externalLinks.github, "_blank")}>
-            GitHub
+          <Link
+            onClick={() => {
+              handleClick(projectsRef);
+              showToggleMenu();
+            }}
+          >
+            Projects
+          </Link>
+          <Link
+            onClick={() => {
+              handleClick(contactRef);
+              showToggleMenu();
+            }}
+          >
+            Contact
           </Link>
         </MobileList>
       )}
@@ -67,14 +83,22 @@ export default function NavBar({ homeRef, projectsRef, contactRef }) {
 const MobileList = styled.div`
   display: none;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   text-align: center;
+  padding: 25px 0;
   font-family: var(--paragraph-font);
-  font-weight: 700;
-  font-size: 0.66rem;
-  gap: 2vh;
-  position: absolute;
-  top: 15vh;
-  width: 100%;
+  gap: 20px;
+  position: fixed;
+  z-index: 9;
+  top: 80px;
+  left: 0;
+  width: 100vw;
+  height: 50vh;
+  background: var(--light-accent);
+  box-sizing: border-box;
+  border: 6px solid var(--dark-color);
+  border-top: none;
   @media (max-width: 767px) {
     ${(props) =>
       props.isToggleActive
@@ -107,10 +131,12 @@ const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  min-height: 75px;
-  height: 15vh;
+  height: 80px;
   width: 100%;
   z-index: 10;
+  @media (max-width: 767px) {
+    padding: 0 10px;
+  }
 `;
 
 const List = styled.ul`
@@ -144,7 +170,7 @@ const Link = styled.a`
   background: var(--light-color);
   min-width: 150px;
   padding: 0px;
-  line-height: 60px;
+  line-height: 50px;
   letter-spacing: 1px;
   text-decoration: none;
   text-align: center;
@@ -158,15 +184,18 @@ const Link = styled.a`
     background-size: 120px;
     animation: ${pixelAnimation} 0.8s steps(8) forwards;
   }
+  @media (max-width: 767px) {
+    width: 80%;
+  }
 `;
 
 const ToggleButton = styled.a`
   position: absolute;
   cursor: pointer;
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   gap: 7px;
-  right: 50px;
+  right: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;

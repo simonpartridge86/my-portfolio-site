@@ -31,11 +31,21 @@ export default function ProjectModal({ showModal, onClose, data }) {
           <Image src={data.images[0].src} alt={data.images[0].alt} />
           <TextContainer>
             <ProjectText>{data.description}</ProjectText>
-            <TechText>Tech used:&nbsp;{data.tech}</TechText>
+            <TechText>{data.tech}</TechText>
           </TextContainer>
           <LinkContainer>
-            <LinkButton text={data.buttons[0].text} />
-            {data.buttons[1] && <LinkButton text={data.buttons[1].text} />}
+            <LinkButton
+              text={data.buttons[0].text}
+              external={true}
+              path={data.buttons[0].link}
+            />
+            {data.buttons[1] && (
+              <LinkButton
+                text={data.buttons[1].text}
+                external={true}
+                path={data.buttons[1].link}
+              />
+            )}
           </LinkContainer>
         </Container>
       </ContentBox>
@@ -72,16 +82,6 @@ const CloseButton = styled.div`
   font-size: 3.5rem;
 `;
 
-const Heading = styled.h3`
-  font-family: var(--heading-font);
-  font-size: 4rem;
-  color: var(--dark-accent);
-  @media (max-width: 768px) {
-    font-size: 2.5rem;
-    margin-top: 25px;
-  }
-`;
-
 const Container = styled.section`
   display: flex;
   flex-direction: column;
@@ -89,6 +89,15 @@ const Container = styled.section`
   align-items: center;
   height: 90%;
   width: 90%;
+`;
+
+const Heading = styled.h3`
+  font-family: var(--heading-font);
+  font-size: 4rem;
+  color: var(--dark-accent);
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
 `;
 
 const Image = styled.img`
@@ -135,7 +144,9 @@ const LinkContainer = styled.div`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  gap: 20px;
   @media (max-width: 768px) {
     flex-direction: column;
+    gap: 5px;
   }
 `;

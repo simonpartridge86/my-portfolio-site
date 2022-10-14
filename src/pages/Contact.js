@@ -4,7 +4,7 @@ import externalLinks from "../data/externalLinks.js";
 
 export default function Contact({ passRef }) {
   return (
-    <Section ref={passRef}>
+    <ContactSection ref={passRef}>
       <Heading>Contact Me</Heading>
       <Content>
         <SocialIcon
@@ -13,14 +13,14 @@ export default function Contact({ passRef }) {
           link={externalLinks.email}
         />
         <SocialIcon
-          text="GitHub."
-          imgURL="https://i.postimg.cc/dZPkCfbb/github-6-512.png"
-          link={externalLinks.github}
-        />
-        <SocialIcon
           text="LinkedIn."
           imgURL="https://i.postimg.cc/m1YcywRt/linkedin-512.png"
           link={externalLinks.linkedin}
+        />
+        <SocialIcon
+          text="GitHub."
+          imgURL="https://i.postimg.cc/dZPkCfbb/github-6-512.png"
+          link={externalLinks.github}
         />
         <SocialIcon
           text="Twitter."
@@ -28,11 +28,11 @@ export default function Contact({ passRef }) {
           link={externalLinks.twitter}
         />
       </Content>
-    </Section>
+    </ContactSection>
   );
 }
 
-const Section = styled.section`
+const ContactSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,11 +51,18 @@ const Content = styled.div`
   justify-content: center;
   align-items: center;
   gap: 50px;
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    width: 80%;
+  }
 `;
 
 const Heading = styled.h2`
   font-size: 5rem;
   color: var(--dark-color);
+  @media (max-width: 768px) {
+    font-size: 3rem;
+  }
 `;
 
 /*

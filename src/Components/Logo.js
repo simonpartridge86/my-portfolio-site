@@ -4,8 +4,8 @@ export default function Logo({ onClick }) {
   return (
     <Section onClick={onClick}>
       <Text className="logo">
-        S<ExpandingText className="expanding-text">imon&nbsp;</ExpandingText>P
-        <ExpandingText className="expanding-text">artridge</ExpandingText>
+        S<ExpandingText className="expanding-text">IMON&nbsp;</ExpandingText>P
+        <ExpandingText className="expanding-text">ARTRIDGE</ExpandingText>
       </Text>
     </Section>
   );
@@ -18,9 +18,9 @@ const Section = styled.section`
   padding: 0px 10px;
   border: 5px solid var(--dark-color);
   background: var(--light-color);
-  height: 60px;
+  height: 50px;
   max-width: 600px;
-  min-width: 60px;
+  min-width: 50px;
   transition: max-width 1s;
   @media (min-width: 1175px) {
     &:hover {
@@ -35,7 +35,7 @@ const Section = styled.section`
 const Text = styled.h1`
   color: var(--dark-accent);
   font-family: var(--heading-font);
-  font-size: 4rem;
+  font-size: 3.5rem;
 `;
 
 const ExpandingText = styled.span`
