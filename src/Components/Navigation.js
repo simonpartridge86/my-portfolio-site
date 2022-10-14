@@ -2,7 +2,7 @@ import styled, { keyframes, css } from "styled-components";
 import { useState } from "react";
 import Logo from "./Logo";
 
-export default function NavBar({ homeRef, projectsRef, contactRef }) {
+export default function Navigation({ homeRef, projectsRef, contactRef }) {
   const [isToggleActive, setIsToggleActive] = useState(false);
 
   function showToggleMenu() {

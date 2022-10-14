@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import NavBar from "./components/NavBar";
+import Navigation from "./components/Navigation";
 import Contact from "./pages/Contact";
 import Intro from "./pages/Intro";
 import Projects from "./pages/Projects";
@@ -24,7 +24,7 @@ export default function App() {
   return (
     <>
       <GlobalStyles />
-      <NavBar
+      <Navigation
         homeRef={homeRef}
         projectsRef={projectsRef}
         contactRef={contactRef}
