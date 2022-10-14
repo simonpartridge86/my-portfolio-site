@@ -1,14 +1,14 @@
 import styled from "styled-components";
-import LinkButton from "../components/LinkButton";
+import externalLinks from "../data/externalLinks";
 
-export default function NewIntro({ passRef }) {
+export default function Intro({ passRef }) {
   return (
     <IntroSection ref={passRef}>
       <Image
         src="https://i.postimg.cc/d18jz1NR/avatar-1024.png"
         alt="pixel avatar"
       />
-      <TextSection>
+      <TextContainer>
         <Heading>Hi, I'm Simon Partridge</Heading>
         <Text>I’m a Doctor of Chemistry and former copy editor.</Text>
         <Text>
@@ -20,15 +20,14 @@ export default function NewIntro({ passRef }) {
           by the brilliant School of Code, and now I'm seeking job opportunities
           as a full-stack developer.
         </Text>
-        <LinkContainer>
-          <LinkButton path="/projects" text="View My Projects" />
-          <LinkButton
-            external={true}
-            path="https://www.canva.com/design/DAFO2NxMh58/x2-7Hc_ruQk32GOflp0sMg/view?utm_content=DAFO2NxMh58&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink"
-            text="View My CV"
-          />
-        </LinkContainer>
-      </TextSection>
+        <Text>
+          If you're interested in hiring me, please check out{" "}
+          <Link href={externalLinks.cv} target="_blank">
+            my CV here
+          </Link>
+          .
+        </Text>
+      </TextContainer>
     </IntroSection>
   );
 }
@@ -62,7 +61,7 @@ const Image = styled.div`
   }
 `;
 
-const TextSection = styled.article`
+const TextContainer = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -86,10 +85,7 @@ const Text = styled.p`
   font-size: 1.5rem;
 `;
 
-const LinkContainer = styled.section`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 20px;
+const Link = styled.a`
+  color: var(--light-accent);
+  text-decoration: none;
 `;

@@ -4,20 +4,20 @@ import externalLinks from "../data/externalLinks.js";
 export default function Footer() {
   return (
     <StyledFooter>
-      <Text>&copy; Simon Partridge</Text>
+      <p>&copy; Simon Partridge</p>
       <LinkContainer>
         <Link href={externalLinks.github} target="_blank">
           Github
         </Link>
-        <Spacer>|</Spacer>
+        |
         <Link href={externalLinks.linkedin} target="_blank">
           LinkedIn
         </Link>
-        <Spacer>|</Spacer>
+        |
         <Link href={externalLinks.twitter} target="_blank">
           Twitter
         </Link>
-        <Spacer>|</Spacer>
+        |
         <Link href={externalLinks.cv} target="_blank">
           CV
         </Link>
@@ -42,10 +42,6 @@ const StyledFooter = styled.footer`
     font-size: 1.25rem;
   }
 `;
-
-const Text = styled.p``;
-
-const Spacer = styled.div``;
 
 const LinkContainer = styled.div`
   display: flex;
