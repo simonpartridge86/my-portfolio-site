@@ -22,7 +22,7 @@ export default function Projects({ passRef }) {
 
   return (
     <ProjectSection ref={passRef}>
-      <Heading>My Coding Projects</Heading>
+      <Heading>My Projects</Heading>
       <ProjectsContainer>
         {projects.map((project, index) => {
           return (
@@ -63,6 +63,7 @@ const ProjectSection = styled.section`
 const ProjectsContainer = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 50px;
@@ -73,4 +74,7 @@ const Heading = styled.h2`
   color: var(--dark-color);
   width: 100%;
   text-align: center;
+  @media (max-width: 768px) {
+    font-size: 3rem;
+  }
 `;

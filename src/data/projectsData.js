@@ -14,12 +14,8 @@ const projects = [
     ],
     images: [
       {
-        src: "https://i.postimg.cc/ncyrzgcc/Screenshot-2022-08-18-at-11-26-45.png",
+        src: "https://i.postimg.cc/XNCGjW9J/Chews-Screenshots.png",
         alt: "chews app home page",
-      },
-      {
-        src: "https://i.postimg.cc/s2y2PWhk/Screenshot-2022-08-18-at-11-27-30.png",
-        alt: "chews app recipe page",
       },
     ],
   },

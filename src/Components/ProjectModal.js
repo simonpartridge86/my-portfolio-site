@@ -72,16 +72,6 @@ const CloseButton = styled.div`
   font-size: 3.5rem;
 `;
 
-const Heading = styled.h3`
-  font-family: var(--heading-font);
-  font-size: 4rem;
-  color: var(--dark-accent);
-  @media (max-width: 768px) {
-    font-size: 2.5rem;
-    margin-top: 25px;
-  }
-`;
-
 const Container = styled.section`
   display: flex;
   flex-direction: column;
@@ -89,6 +79,15 @@ const Container = styled.section`
   align-items: center;
   height: 90%;
   width: 90%;
+`;
+
+const Heading = styled.h3`
+  font-family: var(--heading-font);
+  font-size: 4rem;
+  color: var(--dark-accent);
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
 `;
 
 const Image = styled.img`
@@ -135,7 +134,9 @@ const LinkContainer = styled.div`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  gap: 20px;
   @media (max-width: 768px) {
     flex-direction: column;
+    gap: 5px;
   }
 `;

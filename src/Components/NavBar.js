@@ -51,12 +51,29 @@ export default function NavBar({ homeRef, projectsRef, contactRef }) {
       </ToggleButton>
       {isToggleActive && (
         <MobileList isToggleActive={isToggleActive}>
-          <Link onClick={() => {}}>Projects</Link>
-          <Link onClick={() => window.open(externalLinks.cv, "_blank")}>
-            CV
+          <Link
+            onClick={() => {
+              handleClick(homeRef);
+              showToggleMenu();
+            }}
+          >
+            Home
           </Link>
-          <Link onClick={() => window.open(externalLinks.github, "_blank")}>
-            GitHub
+          <Link
+            onClick={() => {
+              handleClick(projectsRef);
+              showToggleMenu();
+            }}
+          >
+            Projects
+          </Link>
+          <Link
+            onClick={() => {
+              handleClick(contactRef);
+              showToggleMenu();
+            }}
+          >
+            Contact
           </Link>
         </MobileList>
       )}
@@ -67,14 +84,21 @@ export default function NavBar({ homeRef, projectsRef, contactRef }) {
 const MobileList = styled.div`
   display: none;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   text-align: center;
+  padding: 25px 0;
   font-family: var(--paragraph-font);
-  font-weight: 700;
-  font-size: 0.66rem;
-  gap: 2vh;
-  position: absolute;
+  gap: 20px;
+  position: fixed;
   top: 15vh;
-  width: 100%;
+  left: 0;
+  width: 100vw;
+  height: 50vh;
+  background: var(--light-accent);
+  box-sizing: border-box;
+  border: 6px solid var(--dark-color);
+  border-top: none;
   @media (max-width: 767px) {
     ${(props) =>
       props.isToggleActive
@@ -111,6 +135,9 @@ const Nav = styled.nav`
   height: 15vh;
   width: 100%;
   z-index: 10;
+  @media (max-width: 767px) {
+    padding: 0 10px;
+  }
 `;
 
 const List = styled.ul`
@@ -158,6 +185,9 @@ const Link = styled.a`
     background-size: 120px;
     animation: ${pixelAnimation} 0.8s steps(8) forwards;
   }
+  @media (max-width: 767px) {
+    width: 80%;
+  }
 `;
 
 const ToggleButton = styled.a`
@@ -166,7 +196,7 @@ const ToggleButton = styled.a`
   height: 60px;
   width: 60px;
   gap: 7px;
-  right: 50px;
+  right: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;

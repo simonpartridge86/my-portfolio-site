@@ -36,6 +36,10 @@ const Box = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 768px) {
+    width: 30vw;
+    height: 30vw;
+  }
 `;
 
 const Image = styled.img`
@@ -48,4 +52,7 @@ const Image = styled.img`
 const Text = styled.p`
   font-family: var(--paragraph-font);
   font-size: 2.5rem;
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
