@@ -77,12 +77,12 @@ const CloseButton = styled.div`
 `;
 
 const Container = styled.section`
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 90%;
-  width: 90%;
+  height: 100%;
   @media all and (max-width: 768px) {
     gap: 20px;
   }
@@ -151,8 +151,8 @@ const LinkContainer = styled.div`
 const ContentBox = styled.section`
   box-sizing: border-box;
   border: 6px solid var(--dark-color);
-  height: 90vh;
-  width: 60vw;
+  height: 80vh;
+  width: 50vw;
   background-color: var(--light-color);
   position: relative;
   display: flex;
