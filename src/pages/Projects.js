@@ -24,7 +24,7 @@ export default function Projects({ passRef }) {
     <ProjectSection ref={passRef}>
       <TextContainer>
         <Heading>My Projects</Heading>
-        <SubHeading>{"(Click for details)"}</SubHeading>
+        <SubHeading>{"(Click for details and links)"}</SubHeading>
       </TextContainer>
       <ProjectsContainer>
         {projects.map((project, index) => {
