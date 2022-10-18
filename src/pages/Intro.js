@@ -24,8 +24,8 @@ export default function Intro({ passRef }) {
           If you're interested in hiring me, please check out{" "}
           <Link href={externalLinks.cv} target="_blank">
             my CV here
-          </Link>
-          .
+          </Link>{" "}
+          or scroll down to view my projects and contact me.
         </Text>
       </TextContainer>
     </IntroSection>
