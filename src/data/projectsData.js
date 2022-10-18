@@ -4,7 +4,7 @@ const projects = [
     title: "Chews",
     description:
       "A mobile-first web app to help with decision-making and recipe-finding at mealtimes. Created in 4 weeks in a 6-person team as my School of Code final project.",
-    tech: "Next.js | Tailwind CSS | Chakra UI | Node.js | Express | PostgreSQL | Auth0",
+    tech: "Next.js | Tailwind CSS | Chakra UI | Node.js | Express | PostgreSQL | Auth0 | Vercel | Heroku",
     buttons: [
       { link: "https://chews.vercel.app/", text: "View App" },
       {
@@ -43,7 +43,7 @@ const projects = [
     title: "Portfolio Site",
     description:
       "This website! Created as a portfolio site to showcase my projects to prospective employers.",
-    tech: "React | Styled Components",
+    tech: "React | Styled Components | Netlify",
     buttons: [
       {
         link: "https://github.com/simonpartridge86/my-portfolio-site",

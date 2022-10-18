@@ -77,15 +77,15 @@ const CloseButton = styled.div`
 `;
 
 const Container = styled.section`
-  overflow-y: auto;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
-  @media all and (max-width: 768px) {
-    gap: 20px;
-  }
+  height: 85%;
+  width: 100%;
+  padding: 30px;
+  gap: 20px;
 `;
 
 const Heading = styled.h3`
@@ -160,7 +160,7 @@ const ContentBox = styled.section`
   justify-content: center;
   align-items: center;
   @media (max-width: 768px) {
-    height: auto;
+    height: 80vh;
     width: 85vw;
     max-height: 93vh;
     padding-top: 40px;
