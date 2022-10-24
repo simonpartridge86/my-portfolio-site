@@ -6,7 +6,7 @@ const projects = [
       "A mobile-first web app to help with decision-making and recipe-finding at mealtimes. Created in 4 weeks in a 6-person team as my School of Code final project.",
     tech: "Next.js | Tailwind CSS | Chakra UI | Node.js | Express | PostgreSQL | Auth0 | Vercel | Heroku",
     buttons: [
-      { link: "https://chews.vercel.app/", text: "View App" },
+      { link: "https://chews-dev.vercel.app/", text: "View App" },
       {
         link: "https://github.com/simonpartridge86/Chews-App-Frontend",
         text: "GitHub Repo",
@@ -24,8 +24,12 @@ const projects = [
     title: "SoCial",
     description:
       "A single-page React app created to help School of Code bootcampers create online meetups. Created during a one-week mini-project in a 4-person team during my School of Code bootcamp.",
-    tech: "React | CSS | Node.js | Express | PostgreSQL",
+    tech: "React | CSS | Node.js | Express | PostgreSQL | Netlify | Railway",
     buttons: [
+      {
+        link: "https://socialbymishmash.netlify.app/",
+        text: "View App",
+      },
       {
         link: "https://github.com/simonpartridge86/SoCial-App-Frontend",
         text: "Github Repo",
