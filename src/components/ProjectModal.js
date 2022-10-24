@@ -77,7 +77,7 @@ const CloseButton = styled.div`
 `;
 
 const Container = styled.section`
-  overflow-y: scroll;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
