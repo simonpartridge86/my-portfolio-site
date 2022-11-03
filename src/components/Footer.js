@@ -37,7 +37,6 @@ const StyledFooter = styled.footer`
   background: var(--dark-accent);
   box-sizing: border-box;
   border: 6px solid var(--dark-color);
-  border-top: none;
   @media all and (max-width: 768px) {
     font-size: 1rem;
   }
