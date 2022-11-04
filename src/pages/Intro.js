@@ -47,7 +47,7 @@ const IntroSection = styled.section`
     flex-direction: column;
     justify-content: center;
     gap: 50px;
-    padding-top: 15vh;
+    padding-top: 12vh;
   }
 `;
 
