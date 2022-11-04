@@ -9,8 +9,8 @@ const Image = styled.img`
   height: 100px;
   object-fit: cover;
   padding: 0;
-  margin-top: -20px;
-  margin-bottom: -20px;
+  margin-top: -10px;
+  margin-bottom: -10px;
   box-sizing: border-box;
   border-right: 6px solid var(--dark-color);
   border-left: 6px solid var(--dark-color);

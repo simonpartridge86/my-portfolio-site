@@ -43,10 +43,9 @@ const IntroSection = styled.section`
   border-right: 6px solid var(--dark-color);
   border-left: 6px solid var(--dark-color);
   background: var(--dark-accent);
-  padding: 5%;
   @media (max-width: 768px) {
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 50px;
     padding-top: 15vh;
   }
@@ -72,6 +71,7 @@ const TextContainer = styled.article`
     height: 40vh;
     width: 80vw;
     margin-bottom: 50px;
+    gap: 10px;
   }
 `;
 
