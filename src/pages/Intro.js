@@ -35,7 +35,7 @@ export default function Intro({ passRef }) {
 const IntroSection = styled.section`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   min-height: 100vh;
   height: auto;
@@ -43,20 +43,20 @@ const IntroSection = styled.section`
   border-right: 6px solid var(--dark-color);
   border-left: 6px solid var(--dark-color);
   background: var(--dark-accent);
+  gap: 50px;
   @media (max-width: 768px) {
     flex-direction: column;
     justify-content: center;
-    gap: 50px;
     padding-top: 12vh;
   }
 `;
 
 const Image = styled.img`
-  object-fit: cover;
+  object-fit: contain;
   height: auto;
-  width: 40%;
+  width: 25vw;
   @media (max-width: 768px) {
-    width: 50%;
+    width: 40vw;
   }
 `;
 
@@ -65,7 +65,7 @@ const TextContainer = styled.article`
   flex-direction: column;
   justify-content: center;
   height: 85vh;
-  width: 65vw;
+  width: 50vw;
   gap: 20px;
   @media (max-width: 768px) {
     height: 40vh;

@@ -6,7 +6,7 @@ export default function PixelTransition({ src }) {
 
 const Image = styled.img`
   width: 100%;
-  height: 100px;
+  height: 175px;
   object-fit: cover;
   padding: 0;
   margin-top: -10px;
