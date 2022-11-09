@@ -160,7 +160,7 @@ const ContentBox = styled.section`
   justify-content: center;
   align-items: center;
   @media (max-width: 768px) {
-    height: 80vh;
+    height: 70vh;
     width: 85vw;
     max-height: 93vh;
     padding-top: 40px;
