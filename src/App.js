@@ -43,7 +43,7 @@ export default function App() {
 const GlobalStyles = createGlobalStyle`
 :root {
     --heading-font: 'PixelFont';
-    --paragraph-font: 'DM Sans', sans-serif;
+    --paragraph-font: 'Lato', sans-serif;
     --dark-color: #201F24;
     --light-color: #FFFFFF;
     --dark-accent: #8E7DBE;
