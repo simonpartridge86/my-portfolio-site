@@ -58,6 +58,7 @@ const IntroSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100vw;
   min-height: 100vh;
   height: auto;
   gap: 25px;
@@ -81,6 +82,7 @@ const Profile = styled.article`
     flex-direction: column;
     min-height: 100vh;
     justify-content: space-around;
+    width: 100%;
   }
 `;
 
@@ -105,7 +107,7 @@ const TextContainer = styled.div`
   gap: 20px;
   @media (max-width: 768px) {
     height: 40vh;
-    width: 80vw;
+    width: 85%;
     gap: 10px;
   }
 `;

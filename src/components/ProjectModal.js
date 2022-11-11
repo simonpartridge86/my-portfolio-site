@@ -160,11 +160,12 @@ const ContentBox = styled.section`
   justify-content: center;
   align-items: center;
   @media (max-width: 768px) {
-    height: 70vh;
+    height: 75vh;
     width: 85vw;
     max-height: 93vh;
-    padding-top: 40px;
-    padding-bottom: 20px;
+    padding-top: 45px;
+    padding-bottom: 0px;
+    margin-bottom: 10vh;
   }
   &:after {
     background-image: linear-gradient(
