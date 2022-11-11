@@ -91,9 +91,11 @@ const Image = styled.img`
   height: auto;
   width: 20%;
   margin: 50px;
-  flex-shrink: 2;
+  flex-shrink: 0;
   @media (max-width: 768px) {
-    width: 35%;
+    height: 25vh;
+    margin-bottom: 0;
+    width: auto;
   }
 `;
 
@@ -106,7 +108,7 @@ const TextContainer = styled.div`
   width: 80%;
   gap: 20px;
   @media (max-width: 768px) {
-    height: 40vh;
+    min-height: 40vh;
     width: 85%;
     gap: 10px;
   }
