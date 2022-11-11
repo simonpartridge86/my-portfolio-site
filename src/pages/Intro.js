@@ -40,11 +40,14 @@ export default function Intro({ passRef }) {
         </TextContainer>
       </Profile>
       <SkillsContainer>
-        {skills.map((skill) => {
-          return (
-            <SkillIcon src={skill.src} text={skill.text} key={skill.text} />
-          );
-        })}
+        <Heading>Technologies I've worked with:</Heading>
+        <Skills>
+          {skills.map((skill) => {
+            return (
+              <SkillIcon src={skill.src} text={skill.text} key={skill.text} />
+            );
+          })}
+        </Skills>
       </SkillsContainer>
     </IntroSection>
   );
@@ -62,35 +65,33 @@ const IntroSection = styled.section`
   border-right: 6px solid var(--dark-color);
   border-left: 6px solid var(--dark-color);
   background: var(--dark-accent);
-  @media (max-width: 768px) {
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 12vh;
-  }
+  padding-top: 10vh;
 `;
 
 const Profile = styled.article`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: flex-end;
-  width: 100%;
-  height: 60vh;
+  align-items: center;
+  width: 90%;
+  min-height: 50vh;
+  height: auto;
   background: var(--dark-accent);
   @media (max-width: 768px) {
     flex-direction: column;
-    justify-content: center;
-    padding-top: 12vh;
+    min-height: 100vh;
+    justify-content: space-around;
   }
 `;
 
 const Image = styled.img`
   object-fit: contain;
   height: auto;
-  width: 15vw;
+  width: 20%;
   margin: 50px;
+  flex-shrink: 2;
   @media (max-width: 768px) {
-    width: 40vw;
+    width: 35%;
   }
 `;
 
@@ -98,8 +99,9 @@ const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 20vh;
-  width: 60vw;
+  min-height: 20vh;
+  height: auto;
+  width: 80%;
   gap: 20px;
   @media (max-width: 768px) {
     height: 40vh;
@@ -132,16 +134,28 @@ const Link = styled.a`
 `;
 
 const Bold = styled.span`
-  font-weight: bold;
+  font-weight: 900;
 `;
 
 const SkillsContainer = styled.section`
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 80%;
+  min-height: 20vh;
+  height: auto;
+  gap: 20px;
+`;
+
+const Skills = styled.div`
+  display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  width: 100vw;
-  height: 20vh;
-  background: black;
-  gap: 15px;
+  width: 100%;
+  gap: 20px;
+  margin-bottom: 25px;
 `;

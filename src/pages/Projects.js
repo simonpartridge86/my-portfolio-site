@@ -96,6 +96,7 @@ const Heading = styled.h2`
 `;
 
 const SubHeading = styled.p`
+  font-family: var(--paragraph-font);
   font-size: 2rem;
   color: var(--dark-color);
   width: 100%;
