@@ -4,9 +4,12 @@ import Contact from "./pages/Contact";
 import Intro from "./pages/Intro";
 import Projects from "./pages/Projects";
 import Footer from "./components/Footer";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import externalLinks from "./data/externalLinks.js";
 import { useRef } from "react";
 import PixelTransition from "./components/PixelTransition";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 console.log(
   "Hi, thanks for inspecting my website. Hopefully the console is error-free 🤞"
@@ -23,20 +26,32 @@ export default function App() {
   const contactRef = useRef(null);
 
   return (
-    <>
+    <Router>
       <GlobalStyles />
       <Navigation
         homeRef={homeRef}
         projectsRef={projectsRef}
         contactRef={contactRef}
       />
-      <Intro passRef={homeRef} />
-      <PixelTransition src="https://i.postimg.cc/TYTVtQPD/section-transition.png" />
-      <Projects passRef={projectsRef} />
-      <PixelTransition src="https://i.postimg.cc/3x8dMcMg/section-transition.png" />
-      <Contact passRef={contactRef} />
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={
+            <>
+              <Intro passRef={homeRef} />
+              <PixelTransition src="https://i.postimg.cc/TYTVtQPD/section-transition.png" />
+              <Projects passRef={projectsRef} />
+              <PixelTransition src="https://i.postimg.cc/3x8dMcMg/section-transition.png" />
+              <Contact passRef={contactRef} />
+            </>
+          }
+        />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
+      </Routes>
       <Footer />
-    </>
+    </Router>
   );
 }
 
