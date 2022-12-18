@@ -10,6 +10,7 @@ import externalLinks from "./data/externalLinks.js";
 import { useRef } from "react";
 import PixelTransition from "./components/PixelTransition";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 console.log(
   "Hi, thanks for inspecting my website. Hopefully the console is error-free 🤞"
@@ -20,6 +21,11 @@ console.log(
 console.log(externalLinks.github);
 console.log(externalLinks.linkedin);
 
+const client = new ApolloClient({
+  uri: "http://localhost:1337/graphql",
+  cache: new InMemoryCache(),
+});
+
 export default function App() {
   const homeRef = useRef(null);
   const projectsRef = useRef(null);
@@ -27,30 +33,32 @@ export default function App() {
 
   return (
     <Router>
-      <GlobalStyles />
-      <Navigation
-        homeRef={homeRef}
-        projectsRef={projectsRef}
-        contactRef={contactRef}
-      />
-      <Routes>
-        <Route
-          exact
-          path="/"
-          element={
-            <>
-              <Intro passRef={homeRef} />
-              <PixelTransition src="https://i.postimg.cc/TYTVtQPD/section-transition.png" />
-              <Projects passRef={projectsRef} />
-              <PixelTransition src="https://i.postimg.cc/3x8dMcMg/section-transition.png" />
-              <Contact passRef={contactRef} />
-            </>
-          }
+      <ApolloProvider client={client}>
+        <GlobalStyles />
+        <Navigation
+          homeRef={homeRef}
+          projectsRef={projectsRef}
+          contactRef={contactRef}
         />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/:id" element={<BlogPost />} />
-      </Routes>
-      <Footer />
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <>
+                <Intro passRef={homeRef} />
+                <PixelTransition src="https://i.postimg.cc/TYTVtQPD/section-transition.png" />
+                <Projects passRef={projectsRef} />
+                <PixelTransition src="https://i.postimg.cc/3x8dMcMg/section-transition.png" />
+                <Contact passRef={contactRef} />
+              </>
+            }
+          />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
+        </Routes>
+        <Footer />
+      </ApolloProvider>
     </Router>
   );
 }
