@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import externalLinks from "../data/externalLinks";
-import SkillIcon from "../components/SkillIcon";
+import SkillIcon from "./SkillIcon";
 import skills from "../data/skillsData.js";
 
 export default function Intro({ passRef }) {

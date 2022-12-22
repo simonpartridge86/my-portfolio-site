@@ -2,6 +2,8 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
+import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
 
 const BLOGS = gql`
   query GetBlogs {
@@ -24,15 +26,19 @@ export default function Blog() {
   if (error) return <p>Error!</p>;
   console.log(data);
   return (
-    <div>
-      {data.blogs.data.map((post) => (
-        <BlogSection key={post.id} className="blogpost">
-          <h2 className="title">{post.attributes.title}</h2>
-          <p className="body">{post.attributes.body.substring(0, 200)}...</p>
-          <Link to={`/blog/${post.id}`}>Read More</Link>
-        </BlogSection>
-      ))}
-    </div>
+    <>
+      <Navigation />
+      <div>
+        {data.blogs.data.map((post) => (
+          <BlogSection key={post.id} className="blogpost">
+            <h2 className="title">{post.attributes.title}</h2>
+            <p className="body">{post.attributes.body.substring(0, 200)}...</p>
+            <Link to={`/blog/${post.id}`}>Read More</Link>
+          </BlogSection>
+        ))}
+      </div>
+      <Footer />
+    </>
   );
 }
 

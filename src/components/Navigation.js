@@ -1,8 +1,14 @@
 import styled, { keyframes, css } from "styled-components";
 import { useState } from "react";
 import Logo from "./Logo";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 
 export default function Navigation({ homeRef, projectsRef, contactRef }) {
+  const { id } = useParams();
+  if (id) {
+  }
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isToggleActive, setIsToggleActive] = useState(false);
 
   function showToggleMenu() {
@@ -17,27 +23,54 @@ export default function Navigation({ homeRef, projectsRef, contactRef }) {
     <Nav>
       <Logo
         onClick={() => {
-          handleClick(homeRef);
+          if (location.pathname === "/") {
+            handleClick(homeRef);
+          } else {
+            navigate("/");
+          }
         }}
       />
       <List isToggleActive={isToggleActive}>
         <Link
           onClick={() => {
-            handleClick(homeRef);
+            if (location.pathname === "/") {
+              handleClick(homeRef);
+            } else {
+              navigate("/");
+            }
           }}
         >
           Home
         </Link>
         <Link
           onClick={() => {
-            handleClick(projectsRef);
+            if (location.pathname === "/blog") {
+              handleClick(homeRef);
+            } else {
+              navigate("/blog");
+            }
+          }}
+        >
+          Blog
+        </Link>
+        <Link
+          onClick={() => {
+            if (location.pathname === "/") {
+              handleClick(projectsRef);
+            } else {
+              navigate("/:projects");
+            }
           }}
         >
           Projects
         </Link>
         <Link
           onClick={() => {
-            handleClick(contactRef);
+            if (location.pathname === "/") {
+              handleClick(contactRef);
+            } else {
+              navigate("/:contact");
+            }
           }}
         >
           Contact
