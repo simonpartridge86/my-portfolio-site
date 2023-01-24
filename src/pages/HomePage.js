@@ -5,7 +5,6 @@ import Projects from "../components/Projects";
 import Footer from "../components/Footer";
 import PixelTransition from "../components/PixelTransition";
 import { useRef } from "react";
-import { useParams } from "react-router-dom";
 
 export default function HomePage() {
   const homeRef = useRef(null);
