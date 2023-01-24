@@ -20,9 +20,12 @@ export default function Intro({ passRef }) {
             <Bold>passion for problem-solving</Bold>.
           </Text>
           <Text>
-            I've just completed a full-stack JavaScript development bootcamp run
-            by the brilliant School of Code, and now I'm seeking job
-            opportunities as a junior developer.
+            Im 2022, I completed a full-stack JavaScript development bootcamp
+            run by the brilliant{" "}
+            <Link href={externalLinks.soc} target="_blank">
+              <Bold>School of Code</Bold>
+            </Link>
+            , and now I'm working in my first job as a junior software engineer.
           </Text>
           <Text>
             Prior to coding, I obtained a <Bold></Bold>PhD in Chemistry, and{" "}
@@ -30,13 +33,13 @@ export default function Intro({ passRef }) {
             as a copy editor. I started learning to code in order to{" "}
             <Bold>find more exciting and creative work</Bold>.
           </Text>
-          <Text>
+          {/* <Text>
             If you're interested in hiring me, please check out{" "}
             <Link href={externalLinks.cv} target="_blank">
               <Bold>my CV here</Bold>
             </Link>{" "}
             or scroll down to view my projects and contact me.
-          </Text>
+          </Text> */}
         </TextContainer>
       </Profile>
       <SkillsContainer>

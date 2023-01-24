@@ -4,6 +4,7 @@ const externalLinks = {
   email: "mailto:simonpartridge86@gmail.com",
   linkedin: "https://www.linkedin.com/in/simonpartridge86/",
   twitter: "https://twitter.com/simonisworking",
+  soc: "https://www.schoolofcode.co.uk/",
 };
 
 export default externalLinks;
