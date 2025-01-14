@@ -14,12 +14,8 @@ export default function Footer() {
           LinkedIn
         </Link>
         |
-        <Link href={externalLinks.twitter} target="_blank">
-          Twitter
-        </Link>
-        |
         <Link href={externalLinks.cv} target="_blank">
-          CV
+          My CV
         </Link>
       </LinkContainer>
     </StyledFooter>

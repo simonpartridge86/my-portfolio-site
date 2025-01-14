@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export default function PixelTransition({ src }) {
-  return <Image src={src} alt="pixel transition" />;
+  return <Image src={src} alt="pixel transition" draggable={false} />;
 }
 
 const Image = styled.img`

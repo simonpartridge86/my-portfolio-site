@@ -38,7 +38,7 @@ const ContactSection = styled.section`
   box-sizing: border-box;
   border-right: 6px solid var(--dark-color);
   border-left: 6px solid var(--dark-color);
-  background: var(--light-accent);
+  background: var(--light-color);
 `;
 
 const Content = styled.div`

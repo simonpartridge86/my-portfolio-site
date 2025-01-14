@@ -78,6 +78,9 @@ export default function Navigation({ homeRef, projectsRef, contactRef }) {
           >
             Contact
           </Link>
+          <Link href={externalLinks.cv} target="_blank" rel="noreferrer">
+            My CV
+          </Link>
         </MobileList>
       )}
     </Nav>
