@@ -22,11 +22,6 @@ export default function Contact({ passRef }) {
           imgURL="https://i.postimg.cc/dZPkCfbb/github-6-512.png"
           link={externalLinks.github}
         />
-        <SocialIcon
-          text="Twitter."
-          imgURL="https://i.postimg.cc/BtH13qD4/twitter-512.png"
-          link={externalLinks.twitter}
-        />
       </Content>
     </ContactSection>
   );
@@ -43,6 +38,7 @@ const ContactSection = styled.section`
   box-sizing: border-box;
   border-right: 6px solid var(--dark-color);
   border-left: 6px solid var(--dark-color);
+  background: var(--light-accent);
 `;
 
 const Content = styled.div`
@@ -69,5 +65,4 @@ const Heading = styled.h2`
 https://i.postimg.cc/34D0dhcj/email-12-512.png
 https://i.postimg.cc/dZPkCfbb/github-6-512.png
 https://i.postimg.cc/m1YcywRt/linkedin-512.png
-https://i.postimg.cc/BtH13qD4/twitter-512.png
 */

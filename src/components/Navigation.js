@@ -1,6 +1,7 @@
 import styled, { keyframes, css } from "styled-components";
 import { useState } from "react";
 import Logo from "./Logo";
+import externalLinks from "../data/externalLinks";
 
 export default function Navigation({ homeRef, projectsRef, contactRef }) {
   const [isToggleActive, setIsToggleActive] = useState(false);
@@ -28,19 +29,22 @@ export default function Navigation({ homeRef, projectsRef, contactRef }) {
         >
           Home
         </Link>
-        <Link
+        {/* <Link
           onClick={() => {
             handleClick(projectsRef);
           }}
         >
           Projects
-        </Link>
+        </Link> */}
         <Link
           onClick={() => {
             handleClick(contactRef);
           }}
         >
           Contact
+        </Link>
+        <Link href={externalLinks.cv} target="_blank" rel="noreferrer">
+          My CV
         </Link>
       </List>
       <ToggleButton onClick={showToggleMenu} isToggleActive={isToggleActive}>
@@ -58,14 +62,14 @@ export default function Navigation({ homeRef, projectsRef, contactRef }) {
           >
             Home
           </Link>
-          <Link
+          {/* <Link
             onClick={() => {
               handleClick(projectsRef);
               showToggleMenu();
             }}
           >
             Projects
-          </Link>
+          </Link> */}
           <Link
             onClick={() => {
               handleClick(contactRef);

@@ -20,15 +20,20 @@ export default function Intro({ passRef }) {
             <Bold>passion for problem-solving</Bold>.
           </Text>
           <Text>
-            Im 2022, I completed a full-stack JavaScript development bootcamp
+            In 2022, I completed a full-stack JavaScript development bootcamp
             run by the brilliant{" "}
             <Link href={externalLinks.soc} target="_blank">
               <Bold>School of Code</Bold>
             </Link>
-            , and now I'm working in my first job as a junior software engineer.
+            to transition career to software development.
           </Text>
           <Text>
-            Prior to coding, I obtained a <Bold></Bold>PhD in Chemistry, and{" "}
+            I started my first job as a <Bold>Junior Software Engineer</Bold> in
+            Feb 2023. In early 2024 I was promoted to a{" "}
+            <Bold>mid-level Software Engineer</Bold>.
+          </Text>
+          <Text>
+            Prior to coding, I obtained a <Bold>PhD in Chemistry</Bold>, and{" "}
             <Bold>travelled the world</Bold> for several years working remotely
             as a copy editor. I started learning to code in order to{" "}
             <Bold>find more exciting and creative work</Bold>.

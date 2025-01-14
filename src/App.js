@@ -2,7 +2,6 @@ import { createGlobalStyle } from "styled-components";
 import Navigation from "./components/Navigation";
 import Contact from "./pages/Contact";
 import Intro from "./pages/Intro";
-import Projects from "./pages/Projects";
 import Footer from "./components/Footer";
 import externalLinks from "./data/externalLinks.js";
 import { useRef } from "react";
@@ -32,8 +31,8 @@ export default function App() {
       />
       <Intro passRef={homeRef} />
       <PixelTransition src="https://i.postimg.cc/TYTVtQPD/section-transition.png" />
-      <Projects passRef={projectsRef} />
-      <PixelTransition src="https://i.postimg.cc/3x8dMcMg/section-transition.png" />
+      {/* <Projects passRef={projectsRef} />
+      <PixelTransition src="https://i.postimg.cc/3x8dMcMg/section-transition.png" /> */}
       <Contact passRef={contactRef} />
       <Footer />
     </>
